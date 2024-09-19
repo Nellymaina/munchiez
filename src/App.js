@@ -45,7 +45,6 @@ return(
     <Route path="category" element={<Cat className="category-page" query= {searchQuery}/>}/>
     <Route path="category/cart" element={<Cartpage  />}/>
     <Route path="category/cart/checkout" element={<CheckoutPage  />}/>
-
     <Route path="category/:name" element={<Brands query= {searchQuery}/>}/>
     <Route path="category/:name/:brandProductsId" element={<BrandProductsPage query= {searchQuery}/>}/>
     <Route path="category2/:name" element={<DrinksCategory query= {searchQuery} />}/>
