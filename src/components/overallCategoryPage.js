@@ -25,7 +25,7 @@ export default function OverallCategoryPage({query}){
            </Link>
          <AddShoppingCart onClick={()=>handleCart(item)}/> 
           <p>{item.FullName}</p>
-          <p>ksh{item.price}</p>
+          
           </div>
        )
       })
@@ -67,7 +67,7 @@ function handleCartRemove(){
   <button className="cart-button2" onClick={handleCartRemove}>-</button>
   {pro? pro.quantity:1}
 <button className="cart-button" onClick={handleCart}>AddToCart</button>
-<p>KSH {crunchydata.price}.00</p>
+<p>KSH {crunchydata.price}.00000</p>
 </div>
   <div>
 <h3 className="description-header">Ingredients </h3><p className="description-clause">{crunchydata.description1}</p>
