@@ -20,7 +20,6 @@ import SweetSourCategoryPage from './components/sweet-sourCategoryPage'
 import CrunchyPage from './components/crunchyCategory'
 import CrunchyCategoryPage from './components/crunchyCategoryPage'
 import CheckoutPage from './components/checkout'
-import OverallCategoryPage from './components/overallCategoryPage'
 export default function App(){
   const [searchQuery, setSearchQuery]=React.useState("");
 
@@ -56,7 +55,6 @@ return(
     <Route path="category4/:Sweetourname/:SweetName" element={<SweetSourCategoryPage query={searchQuery}/>}/>
     <Route path="category5/:crunchyname"    element={<CrunchyPage query= {searchQuery} />}/>
     <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage query= {searchQuery} />}/>
- <Route path="category6/:overallName" element={<OverallCategoryPage query= {searchQuery} />}/>
 
 
 
