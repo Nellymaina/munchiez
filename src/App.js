@@ -78,25 +78,25 @@ return(
   <Search searchQuery={searchQuery} search={search}/></div>
   
   <Routes>
-  <Route path="/munchieshub" element={searchQuery==="" ?<Home query= {searchQuery} />: <div className="grid-div">{crispies}</div>}/>
+  <Route path="/munchieshub" element={searchQuery==="" ?<Home  />: <div className="grid-div">{crispies}</div>}/>
  <Route path="/" element={searchQuery==="" ?<Home  />: <div className="grid-div">{crispies}</div>}/>
  <Route path="/:homeId" element={searchQuery==="" ?<HomeCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
  <Route path="signin" element={searchQuery==="" ? <Signin/>: <div className="grid-div">{crispies}</div>}/>
     <Route path="signup" element={searchQuery==="" ?<Login/>: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category" element={searchQuery==="" ?<Cat className="category-page" query= {searchQuery}/>: <div className="grid-div">{crispies}</div>}/>
+    <Route path="category" element={searchQuery==="" ?<Cat className="category-page" />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/cart" element={searchQuery==="" ? <Cartpage  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/cart/checkout" element={searchQuery==="" ? <CheckoutPage  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/:name" element={searchQuery==="" ? <Brands />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category/:name/:brandProductsId" element={searchQuery==="" ? <BrandProductsPage query= {searchQuery}/>: <div className="grid-div">{crispies}</div>}/>
+    <Route path="category/:name/:brandProductsId" element={searchQuery==="" ? <BrandProductsPage />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category2/:name" element={searchQuery==="" ? <DrinksCategory  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category2/:name/:drinksName"    element={searchQuery==="" ? <DrinksCategoryPage query= {searchQuery} />: <div className="grid-div">{crispies}</div>}/>
    <Route path="category3/:crispyname" element={searchQuery==="" ? <CrispsCategory  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category3/:crispyname/:Name"    element={searchQuery==="" ?<CrispsCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category4/:Sweetourname"    element={searchQuery==="" ?<SweetSourPage query= {searchQuery}/>: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category4/:Sweetourname/:SweetName" element={searchQuery==="" ?<SweetSourCategoryPage query={searchQuery}/>: <div className="grid-div">{crispies}</div>}/>
+    <Route path="category4/:Sweetourname"    element={searchQuery==="" ?<SweetSourPage />: <div className="grid-div">{crispies}</div>}/>
+    <Route path="category4/:Sweetourname/:SweetName" element={searchQuery==="" ?<SweetSourCategoryPage />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category5/:crunchyname"    element={searchQuery==="" ? <CrunchyPage />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category5/:crunchyname/:crunchiesName"    element={searchQuery==="" ?<CrunchyCategoryPage query= {searchQuery} />: <div className="grid-div">{crispies}</div>}/>
- <Route path="category6/:overallName" element={searchQuery==="" ?<OverallCategoryPage query= {searchQuery} />: <div className="grid-div">{crispies}</div>}/>
+    <Route path="category5/:crunchyname/:crunchiesName"    element={searchQuery==="" ?<CrunchyCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
+ <Route path="category6/:overallName" element={searchQuery!=="" && searchQuery==="" ?<OverallCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
 
 
 

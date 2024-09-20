@@ -6,7 +6,7 @@ import {ADDTOCART} from './cart-action'
 import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
-export default function OverallCategoryPage({query}){
+export default function OverallCategoryPage(){
     const dispatch=useDispatch()
     const {overallName}=useParams()
     const stater=useSelector(state=>state.items)

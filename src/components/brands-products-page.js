@@ -6,7 +6,7 @@ import {ADDTOCART} from "./cart-action"
 import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
-export default function BrandProductsPage({query}){
+export default function BrandProductsPage(){
 
 const {brandProductsId} = useParams();
 

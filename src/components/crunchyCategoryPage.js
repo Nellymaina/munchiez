@@ -6,7 +6,7 @@ import {ADDTOCART} from './cart-action'
 import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
-export default function CrunchyCategoryPage({query}){
+export default function CrunchyCategoryPage(){
     const dispatch=useDispatch()
     const {crunchiesName}=useParams()
     const stater=useSelector(state=>state.items)

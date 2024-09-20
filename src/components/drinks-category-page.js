@@ -8,7 +8,7 @@ import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
 
-export default function DrinkscategoryPage({query}){
+export default function DrinkscategoryPage(){
 
 const {drinksName} = useParams();
 const dispatch=useDispatch()
