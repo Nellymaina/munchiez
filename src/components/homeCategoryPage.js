@@ -30,21 +30,34 @@ function handleCartRemove(){
        
        }
 
+
+       const feature={
+        position:'relative',
+        bottom:'20vh',
+        left:'45%',
+        color:'lime',
+        backgroundColor:'rgb(7, 34, 43)'
+        }
+              
 const crispies=images.filter(item=>(
   query===""? item: item.FullName.toLowerCase().includes(query.toLowerCase())
 )).map(item=>{
   return( 
      <div>
-        <Link to={`/category6/${item.FullName}`}>
+   <Link key={item.FullName} to={`/category6/${item.FullName}`}>
 
-     <img className="crisps-image" src={item.image} alt=""/>
-     </Link>
-   <AddShoppingCart onClick={()=>handleCart(item)}/> 
-    <p>{item.FullName}</p>
-    <p>ksh{item.price}</p>
-    </div>
- )
+{item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
+<p className="item-price">KES {item.price}.00 </p>
+<h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
+</Link>
+{item.amount<1 && <p className='top-right'>out of stock</p>}
+{item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
+
+
+<AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+</div>)
 })
+
   
     return (
       <div className="description-page">

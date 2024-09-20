@@ -66,19 +66,18 @@ const crispies=crisp.filter(item=>(
       <div className="container">
          <Link key={item.FullName} to={`/category6/${item.FullName}`}>
 
-      {item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
+{item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
+<p className="item-price">KES {item.price}.00 </p>
+<h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
+</Link>
+{item.amount<1 && <p className='top-right'>out of stock</p>}
+{item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
-      <h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
 
-      </Link>
-      {item.amount<1 && <p className='top-right'>out of stock</p>}
-   {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-    <AddShoppingCart style={feature} onClick={()=>handleCart(item)}/> 
-     <p>ksh{item.price}</p>
-     <p></p>
-     </div>
-  )
+<AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+</div>)
 })
+
 
 
 
@@ -87,7 +86,7 @@ const crispies=crisp.filter(item=>(
 
   return (
     <div>
-      {newProducts1.length===0? <div className="grid-div">{crispies}</div>: 
+      {query!==""? <div className="grid-div">{crispies}</div>: 
     <div className="carousel-Hero">
 <Carousel responsive={responsive2} autoPlay={true} infinite={true} showDots={false} removeArrowOnDeviceType={["desktop"]} containerClass="carousel-hero" autoPlaySpeed={2000}>
 <img src={slider.sid1} alt="" />
