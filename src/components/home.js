@@ -5,10 +5,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import responsive from "./responsive"
 import {slider, responsive2} from "./herosection"
-import crisp from './crispy-data2'
 import { Link } from 'react-router-dom';
 import {ADDTOCART} from './cart-action';
-import {AddShoppingCart}  from '@mui/icons-material';
 import { useDispatch } from 'react-redux'
 import banner1 from './images/bg-images/banner3.jpeg'
 import banner2 from "./images/bg-images/floydeez1.jpg"
@@ -21,72 +19,24 @@ function handleCart(item){
 }
 
 
-const newProducts=images.images1.filter(item=>(
-  query==="" ? item: item.length===0)
- ).map(item=>{
+const newProducts=images.images1.map(item=>{
 return (<div className="cardborder"> <Link to={`/${item.FullName}`}><img src={item.image} className="cardborder-img" alt="" /> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2> <p className="homeimages-title">{item.FullName}</p></Link> <AddIcon className="add-icon" onClick={()=>handleCart(item)}/></div>)
 })
 
-const newProducts1=images.images2.filter(item=>(
-  query==="" ? item: item.length===0)).map(item=>{
+const newProducts1=images.images2.map(item=>{
 return (<div className="cardborder"> <Link to={`${item.FullName}`}><img src={item.image} className="cardborder-img" alt=""/> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2>  <p className="homeimages-title">{item.FullName}</p></Link> <AddIcon className="add-icon" onClick={()=>handleCart(item)}/>
 </div>)
 })
-const newProducts2=images.images3.filter(item=>(
-  query==="" ? item: item.length===0)
- ).map(item=>{
+const newProducts2=images.images3.map(item=>{
 return (<div className="cardborder"> <Link to={`/${item.FullName}`}><img src={item.image}  className="cardborder-img" alt=""/> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2> <p className="homeimages-title">{item.FullName}</p> </Link> <AddIcon className="add-icon" onClick={()=>handleCart(item)}/> </div>)
 })
-const newProducts3=images.images4.filter(item=>(
-  query==="" ? item: item.length===0)).map(item=>{
+const newProducts3=images.images4.map(item=>{
 return (<div className="cardborder"> <Link to={`/${item.FullName}`}> <img src={item.image} className="cardborder-img" alt="" /> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2> <p className="homeimages-title">{item.FullName}</p> </Link>  <AddIcon className="add-icon" onClick={()=>handleCart(item)}/>  </div>) 
 })
 
 
-
-
-
-  
-
-const feature={
-  position:'relative',
-  bottom:'20vh',
-  left:'45%',
-  color:'lime',
-  backgroundColor:'rgb(7, 34, 43)'
-  }
-
-
-
- 
-const crispies=crisp.filter(item=>(
-  query===""? item: item.FullName.toLowerCase().includes(query.toLowerCase())
-)).map(item=>{
-   return( 
-      <div className="container">
-         <Link key={item.FullName} to={`/category6/${item.FullName}`}>
-
-{item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
-<p className="item-price">KES {item.price}.00 </p>
-<h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
-</Link>
-{item.amount<1 && <p className='top-right'>out of stock</p>}
-{item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-
-
-<AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
-</div>)
-})
-
-
-
-
-
-
-
-  return (
-    <div>
-      {query!==""? <div className="grid-div">{crispies}</div>: 
+return (
+    <div> 
     <div className="carousel-Hero">
 <Carousel responsive={responsive2} autoPlay={true} infinite={true} showDots={false} removeArrowOnDeviceType={["desktop"]} containerClass="carousel-hero" autoPlaySpeed={2000}>
 <img src={slider.sid1} alt="" />
@@ -124,7 +74,7 @@ const crispies=crisp.filter(item=>(
           {newProducts1}
       </Carousel>
 
-      </div>}
+      </div>
   
     </div>
   )}

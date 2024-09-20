@@ -530,7 +530,7 @@ const crisp=[
 
 },
 {
-    FullName:'Tropical Heat Waves Chilli Potato Crisps 30g',
+    FullName:'Tropical Heat Waves Chilli Lemon Potato Crisps 30g',
     namey:"Waves",
     subname:'Chilli Lemon',
     subname2:'Potato Crisps',
