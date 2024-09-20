@@ -5,7 +5,7 @@ import {ADDTOCART} from './cart-action';
 import {AddShoppingCart}  from '@mui/icons-material';
 import { useDispatch } from 'react-redux'
 
-export default function CrispsCategory({query}){
+export default function CrispsCategory(){
 const {crispyname}= useParams();
 
 
@@ -25,10 +25,8 @@ backgroundColor:'black'
 
 
 
-const newCrisps=crisps.find(item=>(item.name)===crispyname)
-const crispstype=newCrisps.images.filter(item=>(
-   query===""? item: item.length===0
-)).map(item=>{
+const newCrisps=crisps.find(item=>(item.name)=== crispyname)
+const crispstype=newCrisps.images.map(item=>{
    return( 
    <div className='container'>
 <Link to={`/category3/${crispyname}/${item.FullName}`}>
@@ -38,24 +36,15 @@ const crispstype=newCrisps.images.filter(item=>(
 </Link>
    {item.amount<1 && <p className='top-right'>out of stock</p>}
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-
-
    <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
 
 
 
-
    return(
-    <div className="crispy-background">
-
-
-
-<section className='grid-div'>
-
+<div className='grid-div'>
     {crispstype}
-    </section>
     </div>
    )
 

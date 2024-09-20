@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux'
 import {ADDTOCART} from './cart-action'
 import {AddShoppingCart} from '@mui/icons-material'
 
- export default function Brands({query}){
+ export default function Brands(){
    const dispatch=useDispatch()
 function handleCart(item){
 dispatch({type:ADDTOCART, payload:item})
@@ -28,9 +28,7 @@ backgroundColor:'black'
    
    
    const newCrisps=brands.find(item=>(item.name)===name)
-   const crispstype=newCrisps.brandimages.filter(item=>(
-      query===""? item: item.length===0
-   )).map(item=>{
+   const crispstype=newCrisps.brandimages.map(item=>{
       return( 
       <div className='container'>
    <Link to={`/category/${name}/${item.FullName}`}>
