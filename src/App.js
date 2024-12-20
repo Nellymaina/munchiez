@@ -72,7 +72,7 @@ return(
 })
 
 return(
-  <BrowserRouter className="over">
+  <BrowserRouter className="over" basename='/munchiez'>
  <div className="navbar"> <Navbar />
  
   <Search searchQuery={searchQuery} search={search}/></div>
