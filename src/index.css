@@ -1,14 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/darkening');
+@import url('https://fonts.cdnfonts.com/css/vanila');
+@import url('https://fonts.cdnfonts.com/css/bark-dones');
+@import url('https://fonts.cdnfonts.com/css/funkie-retro');
+@import url('https://fonts.cdnfonts.com/css/flapdoodle');
+
+
 body {
   margin:0;
   padding:0;
-  margin-top:8.5%;
+  margin-top:9%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-background-color:black;
-    color:white;
+  background:linear-gradient(to left,rgb(215, 250, 250),white,rgb(248, 198, 231));
+    color:black;
 }
 
 code {
@@ -22,12 +29,26 @@ code {
   position:relative;
 }
 .nav{
-  color: red;
+  color:rgb(136, 243, 247);
   position:fixed;
-  width:0%;
+  width:auto;
   margin-left:3%;
-  font-size:28px;
-  font-family: cursive;
+  font-size:30px;
+  padding-top:0;
+
+  box-shadow: 8px 6px 8px rgb(238, 116, 201) ;
+  font-family: 'Flapdoodle', sans-serif;
+}
+  .nav2{
+    font-size:35px;
+      height:auto;   
+      color:white                                     
+  }
+  .nav3{
+    color:rgb(238, 116, 201);
+    height:auto;
+    font-family: 'Funkie Retro', sans-serif;
+    font-size:40px;
   }
 .navbar-contents{
   display:flex;
@@ -36,7 +57,8 @@ code {
   justify-content:space-between;
  border-bottom:1px solid rgb(209, 203, 203);
  width:100vw;
- max-height:max-content;
+ padding-bottom:1%;
+ height:auto;
 
 }
 .search-icon{
@@ -45,7 +67,7 @@ code {
   align-content: center;
   position:absolute;
   bottom:10px;
-  margin-top:1%;
+  margin-top:3%;
   
 }
 
@@ -54,8 +76,11 @@ code {
   justify-content: center;
   width:30vw;
   height:auto;
- border-radius:20px;
- margin-top: 10%;
+  padding:2%;
+  box-shadow: 0 4px 8px rgb(238, 116, 201) ;
+  border-radius:20px;
+  border:2px solid white;
+ margin-top:10%;
 }
 .carousel-hero::before{
   content:'';
@@ -69,16 +94,13 @@ code {
 
 
 .carousel-hero img{
-opacity:0.6;
-background-color:black;
-position:relative;
+opacity:1;
 z-index:1;
 width:100%;
 height:80vh;
 
 }
 .carousel-hero{
-  margin-top:15vh;
   height:80vh;
 }
 
@@ -90,17 +112,18 @@ margin-right:2%;
 }
 .cart-badge{
   position:absolute;
-  background-color:red;
+  background-color:white;
   display:flex;
   align-items: center;
   justify-content:center;
   width:50%;
   height:50%;
   border-radius:50%;
-  top:-10px;
+  top:-15px;
   right:0;
   font-size:15px;
-  color:white;
+  font-weight:600;
+  color:black;
 }
 .cart-fill{
   position:relative;
@@ -114,20 +137,36 @@ margin-right:2%;
   left:0;
   height:100%;
   width:30%;
-  background-color:whitesmoke;
+  display: flex;
+  justify-content: center;
+  background-color:white;
+  padding-top: 5%;
   transition: transform 0.3s ease;
   cursor: pointer;
   position:fixed;
   z-index:1000;
-  color:rgb(7, 34, 43);
 } 
+
+li{
+  padding-bottom:4vh;
+}
+.menu{
+  list-style: none;
+}
 
 .link{
   color:black;
-  font-weight:400;
+  font-size: 20px;;
+  font-family:  sans-serif;
+
+
 }
 .link-active{
   color:red;
+font-size: 25px;
+font-family: 'Flapdoodle', sans-serif;
+
+
 }
 
 
@@ -150,9 +189,10 @@ a{
 .cardborder{
   height:55vh;
   width:99%;
-  background:linear-gradient(to bottom, white, white, white, red) ;
+  background-color:white ;
   display:flex;
-  border:1px solid rgb(34, 33, 33);
+  border:2px solid whitesmoke;
+  box-shadow: 0 4px 8px gray;
 
 }
 .cardborder-img{
@@ -167,11 +207,11 @@ a{
 
 .add-icon{
   margin-top:50%;
-  color:none;
+  color:white;
   background-color:limegreen;
   border-radius:10px;
   position:relative;
-   left:1%;
+   left:-5%;
   
 }
 
@@ -182,9 +222,12 @@ a{
   border-radius:50px;
 
 }
+.brands-box{
+  width:100%;
+  height:100%;
+}
 .brands-container{
  margin-left:5%;
-background-color:none;
 width:90%;
 column-gap: 0px;
 border-radius: 0px;
@@ -194,7 +237,7 @@ margin-bottom:10%;
 .image-container{
   position: relative;
   text-align: center;
-  color: white;
+  color: whitesmoke;
 }
 
 .drinks-images{
@@ -289,7 +332,6 @@ width:100%;
   color:whitesmoke;
   background:linear-gradient(to right, red, orange);
   width:15%;
-  font-family:cursive;
   font-size:20px;
 }
 
@@ -312,36 +354,49 @@ width:25%;
   justify-content:center;
   align-items:center;
 }
-.checkout{
-  background-color:white;
-  height:5vh;
-  font-size:16px;
-  color:darkgreen;
+
+
+.cart-button, .checkout{
+  color:black;
+  font-weight:400;
+  border:2px solid rgb(156, 236, 119);
+  background-color:rgb(156, 236, 119);
   border-radius:20px;
+  box-shadow:0 4px 8px gray;
+  width:20vw;
+height:auto;
+padding:2%;
+margin-left:2%;
+
+
+}
+.cart-button2, .clear-cart{
+  width:2vw;
+  margin-right:2%;
+  background-color: rgb(226, 146, 146);
+  border:2px solid rgb(226, 146, 146);
+  box-shadow:0 4px 8px gray;
+  height:auto;
+  width:auto;
+padding:2%;
+
 }
 .clear-cart{
-  background-color:red;
-  height:5vh;
-  font-size:16px;
-  color:white;
-  border-radius:20px;
+  border-radius:20px
 }
-.cart-button{
-  background-color:limegreen;
-  border-radius:20px;
-  width:20vw;
-  height:5vh;
-
-}
-.cart-button2{
-  width:3vw;
-  background-color:red;
-
+.cart-page{
+  background-color: white;
+  height:100vh;
 }
 .description-image{
-  width:55%;
-  height:6vh;
+  width:60%;
+  height:72%;
   
+}
+.description-image img{
+  border:2px solid whitesmoke;
+  box-shadow:0 4px 8px black;
+  padding:0%;
 
 }
 
@@ -356,14 +411,15 @@ width:25%;
   z-index:999;
 }
 .navbar{
-  background:linear-gradient(to bottom,white,white, black);
-  height:13vh;
+  background:linear-gradient(to left,rgb(215, 250, 250),white,rgb(248, 198, 231));
   position:fixed;
+  height:auto;
+  padding-bottom:9%;
   top:0;
   display: flex;
   flex-direction:column;
   align-items:center;
-  
+  padding-top:1%;
   z-index:3000;
   width:100%;
 }
@@ -384,17 +440,19 @@ width:25%;
 }
 .item-price{
 font-size:15px;
+font-weight:500;
 margin-bottom:2%;
+color:black;
 }
 
 h4,h3{
-  color:white;
+  color:black;
   font-size:15px;
   display:flex;
 }
 h9{
   font-size:13px;
-  color:white;
+  color:black;
   margin-top:0%;
   margin-bottom:0%;
   background-color:red;
@@ -402,19 +460,19 @@ h9{
 
 }
 .span-flex{
-  color:yellow;
+  color:rgb(212, 75, 11);
   font-size:14px;
-  font-style:italic;
-  font-weight: 100;
+  font-weight: 400;
 }
 .span-flex2{
-  color:white;
+  color:black;
   font-size:14px;
 }
 .Item-name{
   width:100%;
   font-size:14px;
   height:5%;
+  color:black
 }
 .span-flex3{
   color:red;
@@ -427,6 +485,16 @@ h5{
 .description-page{
   display:grid;
   grid-template-columns:1fr 1fr;
+  padding-top:2%;
+  height:auto;
+  
+}
+.des{
+padding-right: 10vw;
+padding-left:0;
+}
+.des-price{
+  color:orangered;
 }
 
 .checkout-page{
@@ -455,22 +523,24 @@ h5{
   color:white;
 }
 .form{
-  background-color:white;
-  margin-left:20%;
-  width:50vw;
+  
   display:flex;
   justify-content: center;
-  position: center;
   align-items: center;
-  height:85vh;
+  height:100vh;
+}
+.form-2{
+  background-color:white;
+  width:auto;
+  padding:20%;
+  height:80%;
 }
 .title-login{
   color:red;
   font-size:35px;
 }
 .description-header{
-  color:yellow;
-  font-style:cursive;
+  color:red;
   text-decoration:underline;
 }
 .text-box{
@@ -479,7 +549,7 @@ h5{
     color:black;
     border-bottom: 1px solid #f1efef;
     margin-bottom:20%;
-    width:120%;
+    width:100%;
     font-size:15px;
 }
 .text-box:focus{
@@ -490,9 +560,11 @@ h5{
   justify-content: center;
   position: relative;
   align-items: center;
-  margin-top:5%;
+  margin-bottom:5%;
+  margin-left:0;
+  height:auto;
+  padding:5%;
   width:100%;
-  height:80%;
   font-weight:700;
   font-size:15px;
 }
@@ -506,7 +578,6 @@ color:white;
 }
 
 .login-page{
-  
   height:100vh;
   display: flex;
   justify-content: center;
@@ -516,32 +587,34 @@ color:white;
   flex-direction:column;
 }
 .login-container{
-  width: 30vw;
   background-color:red;
-  border-radius:20px;     
-  padding: 20px;
   display:flex;
   justify-content: center;
   align-items:center;
-  height:30vh;
   box-shadow: 0 4px 8px rgba(230, 120, 120, 0.9);
   border-radius: 5px;
   text-align: center;
+  width:auto;
+  height:auto;
+  padding:10%;
 }
+
+
 .submit-button{
 width:100%;
-height:5vh;
+height:7vh;
 border-radius:20px;
-background-color:green;
-color:white;
+background-color: black;
+border:2px solid black;
+box-shadow:0 4px 8px black;
+color:rgb(135, 255, 66);
 font-weight:800;
-border: 1px solid green;
 
 }
 .category-title{
   display:none;
   position: absolute;
-  color:white;
+  color:black;
   font-weight:600;
   font-style:oblique;
   background-color:red;
@@ -555,7 +628,7 @@ border: 1px solid green;
 }
 .homeimages-title{
   color:rgb(0, 0, 0);
-  font-family:cursive;
+  
   font-size:15px;
   width:100%;
 }
@@ -566,7 +639,6 @@ display:flex;
 color:whitesmoke;
 background:linear-gradient(to right, red, rgb(99, 4, 78));
 width:15%;
-font-family:cursive;
 font-size:20px;
 }
 

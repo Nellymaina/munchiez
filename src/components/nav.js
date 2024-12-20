@@ -53,10 +53,10 @@ function handleDragEnd(event){
     <div className='navbar-contents'>
         <button onClick={toggle} className='ham-button'>&#9776;</button>
 
-
 {sidebar===true && <div ref={sidebarRef} className='sidebar'  draggable="true" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}><Sidebar /></div>}
-    <h1 className="nav">MUNCHies<span>Hub</span></h1>
-    <div className="cart-icon">
+   <Link to="/" className="nav">MUNCH<span className='nav2'>ie</span><span className='nav3'>Z</span></Link> 
+   
+   <div className="cart-icon">
       
       <Link to="/signin">
     <AccountCircleIcon style={color}/>

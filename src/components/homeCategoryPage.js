@@ -19,6 +19,7 @@ const pro=stater.find(item=>item.FullName===homeImages.FullName)
 
 function handleCart(){
   dispatch({type:ADDTOCART, payload:homeImages})
+  alert("ITEM ADDED TO CART!") 
 }
 
 function handleCartRemove(){
@@ -31,9 +32,10 @@ function handleCartRemove(){
        <><div className="description-image">
         <ReactImageMagnify{...{
           smallImage:{
-            alt:"hey", 
+            alt:"", 
             isFluidWidth:true, 
             src:homeImages.image2
+            
           }, 
           largeImage:{
             src:homeImages.image2, 
@@ -44,11 +46,11 @@ function handleCartRemove(){
       /><h4>{homeImages.FullName}</h4>
       <button className="cart-button2" onClick={handleCartRemove}>-</button>
       {pro? pro.quantity:1}
-    <button className="cart-button" onClick={handleCart}>AddToCart</button>
-    <p>KSH {homeImages.price}.00</p>
+    <button className="cart-button" onClick={handleCart}>Add To Cart</button>
+    <p className='des-price'>KSH {homeImages.price}.00</p>
     </div>
       
-      <div>
+      <div className='des'>
       
     <h3 className="description-header">Ingredients </h3><p className="description-clause">{homeImages.description1}</p>
     <h3 className="description-header">Description</h3><p className="description-clause">{homeImages.description2}</p>

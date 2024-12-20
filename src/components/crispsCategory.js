@@ -13,14 +13,15 @@ const dispatch=useDispatch()
 
 function handleCart(item){
    dispatch({type:ADDTOCART, payload:item})
+   alert("ITEM ADDED TO CART!")
 }
 
 const feature={
 position:'absolute',
 top:'40%',
 right:'0',
-color:'lime',
-backgroundColor:'black'
+color:'green',
+backgroundColor:'white'
    }
 
 

@@ -48,8 +48,8 @@ function handleCart(item){
       position:'absolute',
 top:'40%',
 right:'0',
-color:'lime',
-backgroundColor:'black'
+color:'green',
+backgroundColor:'white'
       }
             
 const crispies=crisps.filter(item=>(
@@ -83,7 +83,7 @@ return(
  <Route path="/:homeId" element={searchQuery==="" ?<HomeCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
  <Route path="signin" element={searchQuery==="" ? <Signin/>: <div className="grid-div">{crispies}</div>}/>
     <Route path="signup" element={searchQuery==="" ?<Login/>: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category" element={searchQuery==="" ?<Cat className="category-page" />: <div className="grid-div">{crispies}</div>}/>
+    <Route path="/category" element={searchQuery==="" ?<Cat className="category-page" />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/cart" element={searchQuery==="" ? <Cartpage  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/cart/checkout" element={searchQuery==="" ? <CheckoutPage  />: <div className="grid-div">{crispies}</div>}/>
     <Route path="category/:name" element={searchQuery==="" ? <Brands />: <div className="grid-div">{crispies}</div>}/>

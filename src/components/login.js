@@ -10,7 +10,7 @@ function fillIn(event){
 return (
 
 <div className='form'>
-<form>
+<form className="form-2">
     <h1 className="title-login">Create an account</h1>
     <input className="text-box" type="text"  placeholder="First name" onChange={fillIn} value={user.Firstname}></input>
     <br/>

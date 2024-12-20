@@ -9,6 +9,7 @@ import {AddShoppingCart} from '@mui/icons-material'
    const dispatch=useDispatch()
 function handleCart(item){
 dispatch({type:ADDTOCART, payload:item})
+alert("ITEM ADDED TO CART!")
 }
 
 const {name}= useParams();
@@ -18,7 +19,7 @@ const feature={
 top:'40%',
 right:'0',
 color:'lime',
-backgroundColor:'black'
+backgroundColor:'white'
    }
 
 

@@ -20,6 +20,7 @@ export default function CrunchyCategoryPage(){
 
 function handleCart(){
     dispatch({type:ADDTOCART, payload:crunchydata})
+    alert("ITEM ADDED TO CART!")
 }
 
 function handleCartRemove(){
@@ -49,7 +50,7 @@ function handleCartRemove(){
 <button className="cart-button" onClick={handleCart}>AddToCart</button>
 <p>KSH {crunchydata.price}.00</p>
 </div>
-  <div>
+  <div className='des'>
 <h3 className="description-header">Ingredients </h3><p className="description-clause">{crunchydata.description1}</p>
 <h3 className="description-header">Description</h3><p className="description-clause">{crunchydata.description2}</p>
   </div>

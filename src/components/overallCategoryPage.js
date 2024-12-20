@@ -22,6 +22,8 @@ export default function OverallCategoryPage(){
 
 function handleCart(){
     dispatch({type:ADDTOCART, payload:crunchydata})
+    alert("ITEM ADDED TO CART!") 
+
 }
 
 function handleCartRemove(){

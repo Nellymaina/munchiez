@@ -11,11 +11,14 @@ import { useDispatch } from 'react-redux'
 import banner1 from './images/bg-images/banner3.jpeg'
 import banner2 from "./images/bg-images/floydeez1.jpg"
 import banner3 from './images/bg-images/banner2.jpeg'
+
 export default function Home({query}) {
   
 const dispatch=useDispatch()
 function handleCart(item){
   dispatch({type:ADDTOCART, payload:item})
+  alert("ITEM ADDED TO CART!") 
+
 }
 
 
@@ -58,11 +61,11 @@ return (
         </Carousel>
         
        
-       
+       <div className='banner'>
         <img src={banner1} alt="" className="hero-banner"/>
         <img src={banner2} alt="" className="hero-banner"/>
         <img src={banner3} alt="" className="hero-banner"/>
-
+</div>
 
 
         <h3 className="hero-title">Popular brands</h3>

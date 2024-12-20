@@ -10,25 +10,25 @@ import sweetsour from './sweet&sour-snacks'
 import crunchy from './crunchy-data'
 
 
-export default function Cat(){
+export default function Cat({query}){
 
-    
-
+  
 
  const newBrands=brands.map((item)=>
     (
     <Link to={`/category/${item.name}`}>
+      <div className='brands-box'>
      <img className="brands" src={item.imageurl} alt="" />
+     </div>
     </Link>
 ))
 
 
 
-
   
-
-
   
+  
+   
 
 
 
@@ -78,8 +78,6 @@ const crunchydata=crunchy.map((item)=>
 ))
 
     return(
-        <>
-         
             <div className="Category-page">
             <h3 className='category-name'>Shop by Brands</h3>
             <Carousel responsive={responsive} containerClass= "brands-container" draggable={true}  swipeable={true} autoPlay={true} infinite={true} autoPlaySpeed={1500}>
@@ -104,7 +102,7 @@ const crunchydata=crunchy.map((item)=>
 </Carousel>
         
         </div>
-    </>
+    
     
     )
  }

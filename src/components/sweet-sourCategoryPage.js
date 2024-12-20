@@ -48,7 +48,7 @@ function handleCartRemove(){
 <button className="cart-button" onClick={handleCart}>AddToCart</button>
 <p>KSH {crispydetails.price}.00</p></div>
   
-  <div>
+  <div className='des'>
 <h3 className="description-header">Ingredients </h3><p className="description-clause">{crispydetails.description1}</p>
 <h3 className="description-header">Description</h3><p className="description-clause">{crispydetails.description2}</p>
  

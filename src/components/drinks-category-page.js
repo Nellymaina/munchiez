@@ -21,6 +21,8 @@ const pro=stater.find(item=>item.FullName===pop.FullName)
 
 function handleCart(){
   dispatch({type:ADDTOCART, payload:pop})
+  alert("ITEM ADDED TO CART!") 
+
 }
 
 function handleCartRemove(){
@@ -50,7 +52,7 @@ function handleCartRemove(){
 <button className="cart-button" onClick={handleCart}>AddToCart</button>
 <p>KSH {pop.price}.00</p>
 </div>
-<div className="full-description">
+<div className="des">
   
 <h3 className="description-header">Ingredients </h3><p className="description-clause">{pop.description1}</p>
 <h3 className="description-header">Description</h3><p className="description-clause">{pop.description2}</p>

@@ -21,8 +21,8 @@ const feature={
 position:'absolute',
 top:'40%',
 right:'0',
-color:'lime',
-backgroundColor:'black'
+color:'green',
+backgroundColor:'white'
 }
 
 
@@ -33,9 +33,10 @@ const fyp= fullAmount.map(item=>{
       
    <Link to={`/category2/${name}/${item.FullName}`}>
    {item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
-   <p className="item-price">KES {item.price}.00 </p>
-   <h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
-</Link>
+   
+      <p className="item-price">KES {item.price}.00 </p>
+  <div className="Item-fullName"> <h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
+  </div></Link>
    {item.amount<1 && <p className='top-right'>out of stock</p>}
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
@@ -45,6 +46,7 @@ const fyp= fullAmount.map(item=>{
 })
 function handleCart(item, itemFullName){
 dispatch({type:ADDTOCART, payload:item})
+alert("ITEM ADDED TO CART!") 
 const updatedData=fullAmount.map(item=> item.FullName===itemFullName && item.amount>0? {...item, amount:item.amount-1}: {...item, amount:item.amount} )
 setFullAmount(updatedData)
 localStorage.setItem('data',JSON.stringify(updatedData))
@@ -53,13 +55,12 @@ localStorage.setItem('data',JSON.stringify(updatedData))
 
 
    return(
-    <div className="grid-container">
+    
 
-      <section className="grid-div"> 
+      <div className="grid-div"> 
     {fyp}
-    </section>
-
     </div>
+
    )
 
 }

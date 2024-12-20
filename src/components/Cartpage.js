@@ -35,7 +35,7 @@ const sum=checksum()
     return(
 
 
-        <div>
+        <div className='cart-page'>
 <p className="cart-sum">GrandTotal:KSH {sum}.00</p>
             {prod.map(item=>{
    return(

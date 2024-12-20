@@ -22,8 +22,8 @@ function handleCart(item){
    position:'absolute',
    top:'40%',
    right:'0',
-   color:'lime',
-   backgroundColor:'black'
+   color:'green',
+   backgroundColor:'white'
     }
 
  
