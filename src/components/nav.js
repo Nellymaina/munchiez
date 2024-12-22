@@ -38,7 +38,8 @@ function handleDrag(event){
 }
 
 const color={
-  color:"black",
+  color:"white",
+  fontSize:'30px'
   
 }
 

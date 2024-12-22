@@ -8,14 +8,14 @@
 body {
   margin:0;
   padding:0;
-  margin-top:9%;
+  margin-top:14%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:linear-gradient(to left,rgb(215, 250, 250),white,rgb(248, 198, 231));
-    color:black;
+  background-color:black;
+    color:white;
 }
 
 code {
@@ -24,15 +24,17 @@ code {
 }
 .ham-button{
   border-style: none;
-  background-color:transparent;
+  color:white;
   font-size: 30px;
   position:relative;
+  background-color:black;
+
 }
 .nav{
-  color:rgb(136, 243, 247);
+  color:rgb(119, 237, 241);
   position:fixed;
   width:auto;
-  margin-left:3%;
+  margin-left:4%;
   font-size:30px;
   padding-top:0;
 
@@ -42,7 +44,7 @@ code {
   .nav2{
     font-size:35px;
       height:auto;   
-      color:white                                     
+      color:white;
   }
   .nav3{
     color:rgb(238, 116, 201);
@@ -55,9 +57,9 @@ code {
   align-items: center;
   position:absolute;
   justify-content:space-between;
- border-bottom:1px solid rgb(209, 203, 203);
  width:100vw;
  padding-bottom:1%;
+ padding-top:2%;
  height:auto;
 
 }
@@ -74,22 +76,15 @@ code {
 .search{
   display:flex;
   justify-content: center;
-  width:30vw;
+  width:40vw;
   height:auto;
   padding:2%;
-  box-shadow: 0 4px 8px rgb(238, 116, 201) ;
+  box-shadow: 0 4px 8px black ;
   border-radius:20px;
   border:2px solid white;
  margin-top:10%;
 }
-.carousel-hero::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:80vh;
-}
+
 
 
 
@@ -103,7 +98,9 @@ height:80vh;
 .carousel-hero{
   height:80vh;
 }
-
+.carousel-Hero{
+  
+}
 .cart-icon{
   display:flex;
   align-items:center;
@@ -112,7 +109,6 @@ margin-right:2%;
 }
 .cart-badge{
   position:absolute;
-  background-color:white;
   display:flex;
   align-items: center;
   justify-content:center;
@@ -123,7 +119,7 @@ margin-right:2%;
   right:0;
   font-size:15px;
   font-weight:600;
-  color:black;
+  color:red;
 }
 .cart-fill{
   position:relative;
@@ -136,28 +132,38 @@ margin-right:2%;
   top:0;
   left:0;
   height:100%;
-  width:30%;
+  width:40%;
   display: flex;
   justify-content: center;
-  background-color:white;
+  background-color:black;
   padding-top: 5%;
-  transition: transform 0.3s ease;
+  transition: transform 10s ease;
   cursor: pointer;
   position:fixed;
   z-index:1000;
 } 
-
+.quit-menu{
+  margin-left:100%;
+  padding-top:0;
+  color:white;
+  background-color:black;
+  border:none;
+}
+.quit-menu:hover{
+  color:red;
+}
 li{
-  padding-bottom:4vh;
+  padding-top:4vh;
 }
 .menu{
   list-style: none;
 }
 
 .link{
-  color:black;
+  color:aqua;
   font-size: 20px;;
   font-family:  sans-serif;
+  border-bottom: 1px solid aqua;
 
 
 }
@@ -165,6 +171,7 @@ li{
   color:red;
 font-size: 25px;
 font-family: 'Flapdoodle', sans-serif;
+border-bottom: 1px solid red;
 
 
 }
@@ -187,11 +194,11 @@ a{
   font-size:20px;
 }
 .cardborder{
-  height:55vh;
+  height:60vh;
   width:99%;
-  background-color:white ;
+  background-color:white;
   display:flex;
-  border:2px solid whitesmoke;
+  border:1px solid white;
   box-shadow: 0 4px 8px gray;
 
 }
@@ -208,7 +215,7 @@ a{
 .add-icon{
   margin-top:50%;
   color:white;
-  background-color:limegreen;
+  background-color:rgb(27, 150, 27);
   border-radius:10px;
   position:relative;
    left:-5%;
@@ -357,12 +364,12 @@ width:25%;
 
 
 .cart-button, .checkout{
-  color:black;
+  color:white;
   font-weight:400;
-  border:2px solid rgb(156, 236, 119);
-  background-color:rgb(156, 236, 119);
+  border:2px solid rgb(89, 172, 50);
+  background-color:rgb(89, 172, 50);
   border-radius:20px;
-  box-shadow:0 4px 8px gray;
+  box-shadow:0 4px 8px rgb(156, 236, 119);
   width:20vw;
 height:auto;
 padding:2%;
@@ -372,13 +379,15 @@ margin-left:2%;
 }
 .cart-button2, .clear-cart{
   width:2vw;
+  color:white;
   margin-right:2%;
-  background-color: rgb(226, 146, 146);
-  border:2px solid rgb(226, 146, 146);
-  box-shadow:0 4px 8px gray;
+  background-color: red;
+  border:2px solid red;
+  box-shadow:0 4px 8px red;
   height:auto;
   width:auto;
 padding:2%;
+font-size:15px;
 
 }
 .clear-cart{
@@ -411,10 +420,12 @@ padding:2%;
   z-index:999;
 }
 .navbar{
-  background:linear-gradient(to left,rgb(215, 250, 250),white,rgb(248, 198, 231));
+  background-color:black;
+  box-shadow:0 4px 8px rgb(15, 74, 94);
+
   position:fixed;
   height:auto;
-  padding-bottom:9%;
+  padding-bottom:12%;
   top:0;
   display: flex;
   flex-direction:column;
@@ -465,14 +476,14 @@ h9{
   font-weight: 400;
 }
 .span-flex2{
-  color:black;
+  color:white;
   font-size:14px;
 }
 .Item-name{
   width:100%;
   font-size:14px;
   height:5%;
-  color:black
+  color:white;
 }
 .span-flex3{
   color:red;
