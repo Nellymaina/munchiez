@@ -4,7 +4,8 @@ import {useParams, Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux'
 import {AddShoppingCart}  from '@mui/icons-material';
 import {ADDTOCART} from './cart-action'
-export default function CrunchyPage({query}){
+
+export default function CrunchyPage(){
 const {crunchyname}=useParams()
 const crunchydata=crunchy.find(item=>item.name===crunchyname)
 

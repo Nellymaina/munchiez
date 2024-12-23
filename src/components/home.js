@@ -12,7 +12,7 @@ import banner1 from './images/bg-images/banner3.jpeg'
 import banner2 from "./images/bg-images/floydeez1.jpg"
 import banner3 from './images/bg-images/banner2.jpeg'
 
-export default function Home({query}) {
+export default function Home() {
   
 const dispatch=useDispatch()
 function handleCart(item){

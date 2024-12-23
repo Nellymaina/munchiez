@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux'
 import {AddShoppingCart}  from '@mui/icons-material';
 import {ADDTOCART} from './cart-action'
 
-export default function SweetSourPage({query}){
+export default function SweetSourPage(){
 
 const dispatch=useDispatch();
 

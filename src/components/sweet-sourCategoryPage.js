@@ -6,7 +6,7 @@ import {ADDTOCART} from "./cart-action"
 import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
-export default function SweetSourCategoryPage({query}){
+export default function SweetSourCategoryPage(){
     const {SweetName}=useParams()
 
     const dispatch=useDispatch();

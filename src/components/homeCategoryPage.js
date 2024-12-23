@@ -7,7 +7,7 @@ import {REMOVEFROMCART} from "./removeaction"
 import ReactImageMagnify from 'react-image-magnify'
 
 
- export default function HomeCategoryPage({query}){
+ export default function HomeCategoryPage(){
   const { homeId }= useParams()
   const dispatch=useDispatch();
 const stater=useSelector(state=>state.items)

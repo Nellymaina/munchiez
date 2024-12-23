@@ -10,7 +10,7 @@ import sweetsour from './sweet&sour-snacks'
 import crunchy from './crunchy-data'
 
 
-export default function Cat({query}){
+export default function Cat(){
 
   
 

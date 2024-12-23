@@ -85,7 +85,33 @@ code {
  margin-top:10%;
 }
 
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  color:black;
+}
 
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+  color:black
+
+}
+
+.suggestions-list li:hover {
+  background-color:aqua;
+}
 
 
 .carousel-hero img{

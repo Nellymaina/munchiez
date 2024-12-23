@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import Home from "./components/home"
 import crisps from "./components/crispy-data2"
 import {useDispatch} from 'react-redux'
@@ -28,13 +28,32 @@ import CheckoutPage from './components/checkout'
 import OverallCategoryPage from './components/overallCategoryPage'
 
 export default function App(){
-  const [searchQuery, setSearchQuery]=React.useState("");
+  const [query, setQuery]=useState("");
 
-    function search(event){
-        setSearchQuery(event.target.value)
-      
-      
-     }
+  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+
+  const suggestion = crisps.filter(item=>item.subname2 && item.FullName &&item.namey &&item.subname3 && item.subname)
+  const suggestions=[...new Set(suggestion.flatMap(item=>[item.namey, item.FullName, item.subname2, item.subname3, item.subname]))]
+
+  const handleQuery = (event) => {
+    const value = event.target.value;
+    setQuery(value);
+
+    if (value) {
+      const filtered = suggestions.filter((item) =>
+        item.toLowerCase().startsWith(value.toLowerCase())
+      );
+      setFilteredSuggestions(filtered);
+    } else {
+      setFilteredSuggestions([]);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setQuery(suggestion);
+    setFilteredSuggestions([]);
+  };
+
 
 
      const dispatch=useDispatch()
@@ -53,7 +72,7 @@ backgroundColor:'white'
       }
             
 const crispies=crisps.filter(item=>(
-searchQuery===""? item: item.FullName.toLowerCase().includes(searchQuery.toLowerCase())
+query===""? item: item.FullName.toLowerCase().includes(query.toLowerCase())
 )).map(item=>{
 return( 
    <div className="container">
@@ -75,28 +94,32 @@ return(
   <BrowserRouter className="over" basename='/munchiez'>
  <div className="navbar"> <Navbar />
  
-  <Search searchQuery={searchQuery} search={search}/></div>
+  <Search searchQuery={query} search={handleQuery} filteredSuggestions={filteredSuggestions} handleSuggestionClick={handleSuggestionClick}/>
+  
+  
+  </div>
   
   <Routes>
-  <Route path="/munchieshub" element={searchQuery==="" ?<Home  />: <div className="grid-div">{crispies}</div>}/>
- <Route path="/" element={searchQuery==="" ?<Home  />: <div className="grid-div">{crispies}</div>}/>
- <Route path="/:homeId" element={searchQuery==="" ?<HomeCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
- <Route path="signin" element={searchQuery==="" ? <Signin/>: <div className="grid-div">{crispies}</div>}/>
-    <Route path="signup" element={searchQuery==="" ?<Login/>: <div className="grid-div">{crispies}</div>}/>
-    <Route path="/category" element={searchQuery==="" ?<Cat className="category-page" />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category/cart" element={searchQuery==="" ? <Cartpage  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category/cart/checkout" element={searchQuery==="" ? <CheckoutPage  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category/:name" element={searchQuery==="" ? <Brands />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category/:name/:brandProductsId" element={searchQuery==="" ? <BrandProductsPage />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category2/:name" element={searchQuery==="" ? <DrinksCategory  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category2/:name/:drinksName"    element={searchQuery==="" ? <DrinksCategoryPage query= {searchQuery} />: <div className="grid-div">{crispies}</div>}/>
-   <Route path="category3/:crispyname" element={searchQuery==="" ? <CrispsCategory  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category3/:crispyname/:Name"    element={searchQuery==="" ?<CrispsCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category4/:Sweetourname"    element={searchQuery==="" ?<SweetSourPage />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category4/:Sweetourname/:SweetName" element={searchQuery==="" ?<SweetSourCategoryPage />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category5/:crunchyname"    element={searchQuery==="" ? <CrunchyPage />: <div className="grid-div">{crispies}</div>}/>
-    <Route path="category5/:crunchyname/:crunchiesName"    element={searchQuery==="" ?<CrunchyCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
- <Route path="category6/:overallName" element={searchQuery!=="" && searchQuery==="" ?<OverallCategoryPage  />: <div className="grid-div">{crispies}</div>}/>
+   
+   <Route path='/search' element={query==="" ?<></>: <div className="grid-div">{crispies}</div> }/>
+ <Route path="/" element={<Home  />}/>
+ <Route path="/:homeId" element={<HomeCategoryPage  />}/>
+ <Route path="signin" element={ <Signin/>}/>
+    <Route path="signup" element={<Login/>}/>
+    <Route path="/category" element={<Cat className="category-page" />}/>
+    <Route path="category/cart" element={<Cartpage  />}/>
+    <Route path="category/cart/checkout" element={<CheckoutPage  />}/>
+    <Route path="category/:name" element={ <Brands />} />
+    <Route path="category/:name/:brandProductsId" element={<BrandProductsPage />} />
+    <Route path="category2/:name" element={ <DrinksCategory  />}/>
+    <Route path="category2/:name/:drinksName"    element={<DrinksCategoryPage  />}/>
+   <Route path="category3/:crispyname" element={<CrispsCategory  />}/>
+    <Route path="category3/:crispyname/:Name"    element={<CrispsCategoryPage  />}/>
+    <Route path="category4/:Sweetourname"    element={<SweetSourPage />}/>
+    <Route path="category4/:Sweetourname/:SweetName" element={<SweetSourCategoryPage />}/>
+    <Route path="category5/:crunchyname"    element={<CrunchyPage />}/>
+    <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage  />}/>
+ <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>
 
 
 
