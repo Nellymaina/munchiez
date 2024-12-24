@@ -4,18 +4,42 @@
 @import url('https://fonts.cdnfonts.com/css/funkie-retro');
 @import url('https://fonts.cdnfonts.com/css/flapdoodle');
 
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: aqua;
+  --side-color:red;
+  --card-background: #f8f9fa;
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --border-color: #dddddd;
+  --link-color:rgb(152, 248, 232);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: white;
+  --side-color:aqua;
+  --card-background: #1d1d1d;
+  --button-background: #1e90ff;
+  --button-text: #000000;
+  --border-color: #333333;
+  --link-color:red;
+}
 
 body {
   margin:0;
   padding:0;
-  margin-top:14%;
+  margin-top: 12%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:black;
-    color:white;
+  background-color:var(--background-color);
+    color:var(--text-color);
 }
 
 code {
@@ -24,10 +48,15 @@ code {
 }
 .ham-button{
   border-style: none;
-  color:white;
   font-size: 30px;
   position:relative;
-  background-color:black;
+  background-color:var(--background-color);
+    color:var(--text-color);
+
+}
+.account-sign{
+  font-size: 30px;
+  color:var(--text-color);
 
 }
 .nav{
@@ -44,8 +73,8 @@ code {
   .nav2{
     font-size:35px;
       height:auto;   
-      color:white;
-  }
+      color:var(--accent-color);
+    }
   .nav3{
     color:rgb(238, 116, 201);
     height:auto;
@@ -161,7 +190,7 @@ margin-right:2%;
   width:40%;
   display: flex;
   justify-content: center;
-  background-color:black;
+  background-color:var(--background-color);
   padding-top: 5%;
   transition: transform 10s ease;
   cursor: pointer;
@@ -171,8 +200,8 @@ margin-right:2%;
 .quit-menu{
   margin-left:100%;
   padding-top:0;
-  color:white;
-  background-color:black;
+  color:var(--text-color);
+  background-color:var(--background-color);
   border:none;
 }
 .quit-menu:hover{
@@ -186,19 +215,27 @@ li{
 }
 
 .link{
-  color:aqua;
+  color:var(--side-color);
   font-size: 20px;;
   font-family:  sans-serif;
-  border-bottom: 1px solid aqua;
+  border-bottom: 1px solid var(--side-color);
 
 
 }
-.link-active{
-  color:red;
+.link-active,.link-tive{
+  color:var(--link-color);
 font-size: 25px;
 font-family: 'Flapdoodle', sans-serif;
-border-bottom: 1px solid red;
+border-bottom: 1px solid var(--link-color);
 
+
+}
+
+.link-tive{
+  color:var(--text-color);
+  border:none;
+  list-style: none;
+  font-family: 'VANILA', sans-serif;
 
 }
 
@@ -221,7 +258,7 @@ a{
 }
 .cardborder{
   height:60vh;
-  width:99%;
+  width:98%;
   background-color:white;
   display:flex;
   border:1px solid white;
@@ -230,7 +267,7 @@ a{
 }
 .cardborder-img{
   height:55%;
-  width:100%;
+  width:90%;
   transition:transform 0.9 ease-in-out;
 }
 
@@ -446,9 +483,8 @@ font-size:15px;
   z-index:999;
 }
 .navbar{
-  background-color:black;
+  background-color:var(--background-color);
   box-shadow:0 4px 8px rgb(15, 74, 94);
-
   position:fixed;
   height:auto;
   padding-bottom:12%;

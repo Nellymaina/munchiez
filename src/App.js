@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import Home from "./components/home"
 import crisps from "./components/crispy-data2"
 import {useDispatch} from 'react-redux'
@@ -26,6 +26,8 @@ import CrunchyPage from './components/crunchyCategory'
 import CrunchyCategoryPage from './components/crunchyCategoryPage'
 import CheckoutPage from './components/checkout'
 import OverallCategoryPage from './components/overallCategoryPage'
+import './index.css';
+import './App.css';
 
 export default function App(){
   const [query, setQuery]=useState("");
@@ -90,19 +92,32 @@ return(
 </div>)
 })
 
+
+
+
+  const [theme, setTheme] = useState("light"); 
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
 return(
   <BrowserRouter className="over" basename='/munchiez'>
- <div className="navbar"> <Navbar />
- 
-  <Search searchQuery={query} search={handleQuery} filteredSuggestions={filteredSuggestions} handleSuggestionClick={handleSuggestionClick}/>
+    
+  <div className="navbar" > 
+  <Navbar mode={toggleTheme} theme={theme}/>
   
-  
-  </div>
+<Search searchQuery={query} search={handleQuery} filteredSuggestions={filteredSuggestions} handleSuggestionClick={handleSuggestionClick}/>
+</div>
   
   <Routes>
    
    <Route path='/search' element={query==="" ?<></>: <div className="grid-div">{crispies}</div> }/>
- <Route path="/" element={<Home  />}/>
+ <Route  path="/" element={<Home  />}/>
  <Route path="/:homeId" element={<HomeCategoryPage  />}/>
  <Route path="signin" element={ <Signin/>}/>
     <Route path="signup" element={<Login/>}/>
@@ -119,11 +134,7 @@ return(
     <Route path="category4/:Sweetourname/:SweetName" element={<SweetSourCategoryPage />}/>
     <Route path="category5/:crunchyname"    element={<CrunchyPage />}/>
     <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage  />}/>
- <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>
-
-
-
-    
+ <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>    
 </Routes>
 </BrowserRouter>
   )

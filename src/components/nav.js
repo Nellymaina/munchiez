@@ -4,7 +4,7 @@ import Sidebar from "./sidebar"
 import {Link} from 'react-router-dom'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
-export default function Navbar(){
+export default function Navbar({mode, theme}){
     const [sidebar, setsidebar]=useState(false);
     const sidebarRef=useRef(null)
 
@@ -54,13 +54,13 @@ function handleDragEnd(event){
     <div className='navbar-contents'>
         <button onClick={toggle} className='ham-button'>&#9776;</button>
 
-{sidebar===true && <div ref={sidebarRef} className='sidebar'  draggable="true" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}><Sidebar /></div>}
-   <Link to="/" className="nav">MUNCH<span className='nav2'>ie</span><span className='nav3'>Z</span></Link> 
+{sidebar===true && <div>
+   <div ref={sidebarRef} className='sidebar'  draggable="true" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}><Sidebar mode={mode} theme={theme}/></div></div>} <Link to="/" className="nav">MUNCH<span className='nav2'>ie</span><span className='nav3'>Z</span></Link> 
    
    <div className="cart-icon">
       
       <Link to="/signin">
-    <AccountCircleIcon style={color}/>
+    <AccountCircleIcon  className="account-sign"/>
     </Link>
     <Cart/>
     </div>

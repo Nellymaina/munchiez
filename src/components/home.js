@@ -37,10 +37,19 @@ const newProducts3=images.images4.map(item=>{
 return (<div className="cardborder"> <Link to={`/${item.FullName}`}> <img src={item.image} className="cardborder-img" alt="" /> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2> <p className="homeimages-title">{item.FullName}</p> </Link>  <AddIcon className="add-icon" onClick={()=>handleCart(item)}/>  </div>) 
 })
 
+const light={
+  backgroundColor:"white"
+}
+const dark={
+  backgroundColor:"black"
+}
+
+
 
 return (
     <div> 
-    <div className="carousel-Hero">
+
+   <div className="carousel-Hero"  >
 <Carousel responsive={responsive2} autoPlay={true} infinite={true} showDots={false} removeArrowOnDeviceType={["desktop"]} containerClass="carousel-hero" autoPlaySpeed={2000}>
 <img src={slider.sid1} alt="" />
 <img src={slider.sid2} alt=""/>
@@ -78,8 +87,8 @@ return (
       </Carousel>
 
       </div>
+</div>
   
-    </div>
   )}
 
   
