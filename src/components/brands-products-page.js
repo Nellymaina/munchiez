@@ -52,7 +52,7 @@ function handleCartRemove(){
       }
       }}
   />
-  <p>{crispydetails.FullName}</p>
+  <h4>{crispydetails.FullName}</h4>
   <button className="cart-button2" onClick={handleCartRemove}>-</button>
   {pro? pro.quantity:1}
 <button className="cart-button" onClick={handleCart}>AddToCart</button>

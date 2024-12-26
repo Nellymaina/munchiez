@@ -3,7 +3,7 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
-import {AddShoppingCart}  from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {ADDTOCART} from './cart-action'
 
 export default function SweetSourPage(){
@@ -18,14 +18,7 @@ function handleCart(item){
  
 
 
- const feature={
-   position:'absolute',
-   top:'40%',
-   right:'0',
-   color:'green',
-   backgroundColor:'white'
-    }
-
+ 
  
  
 
@@ -44,7 +37,7 @@ const sweet=sweetsour.find(item=>item.name===Sweetourname)
 </Link>
    {item.amount<1 && <p className='top-right'>out of stock</p>}
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-   <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+   <ShoppingCartIcon className="shopping-cart" onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 }) 
     

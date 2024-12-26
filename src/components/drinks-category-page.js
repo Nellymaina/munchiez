@@ -46,7 +46,7 @@ function handleCartRemove(){
         }
         }}
     />
-    <p>{pop.FullName}</p>
+    <h4 className="des-fullname">{pop.FullName}</h4>
   <button className="cart-button2" onClick={handleCartRemove}>-</button>
   {pro? pro.quantity:1}
 <button className="cart-button" onClick={handleCart}>AddToCart</button>

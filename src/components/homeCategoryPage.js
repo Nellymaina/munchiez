@@ -43,7 +43,7 @@ function handleCartRemove(){
             height:750
           }
           }}
-      /><h4>{homeImages.FullName}</h4>
+      /><h4 className="des-fullname">{homeImages.FullName}</h4>
       <button className="cart-button2" onClick={handleCartRemove}>-</button>
       {pro? pro.quantity:1}
     <button className="cart-button" onClick={handleCart}>Add To Cart</button>

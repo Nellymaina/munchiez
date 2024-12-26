@@ -2,7 +2,7 @@ import React from 'react'
 import crunchy from './crunchy-data';
 import {useParams, Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux'
-import {AddShoppingCart}  from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {ADDTOCART} from './cart-action'
 
 export default function CrunchyPage(){
@@ -17,18 +17,8 @@ function handleCart(item){
     dispatch({type:ADDTOCART, payload:item})
     alert("ITEM ADDED TO CART!")
  }
- const feature={
-    position:'absolute',
-top:'40%',
-right:'0',
-color:'green',
-backgroundColor:'white'
-}
  
-
-
-
-
+ 
 const crunchies=crunchydata.images.map(item=>{
     return(
         <div className='container'>
@@ -41,7 +31,7 @@ const crunchies=crunchydata.images.map(item=>{
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
 
-   <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+   <ShoppingCartIcon onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
 

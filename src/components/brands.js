@@ -3,7 +3,7 @@ import {brands} from './brandsPage.js'
 import {useParams, Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux'
 import {ADDTOCART} from './cart-action'
-import {AddShoppingCart} from '@mui/icons-material'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
  export default function Brands(){
    const dispatch=useDispatch()
@@ -14,18 +14,7 @@ alert("ITEM ADDED TO CART!")
 
 const {name}= useParams();
  
-const feature={
-   position:'absolute',
-top:'40%',
-right:'0',
-color:'lime',
-backgroundColor:'white'
-   }
 
-
-
-   
-   
    
    
    const newCrisps=brands.find(item=>(item.name)===name)
@@ -41,7 +30,7 @@ backgroundColor:'white'
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
 
-   <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+   <ShoppingCartIcon onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
    

@@ -1,7 +1,7 @@
 import {React, useState }from 'react'
 import drinks from './drinks-data'
 import {useParams, Link} from 'react-router-dom';
-import {AddShoppingCart}  from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useDispatch} from 'react-redux'
 import {ADDTOCART} from './cart-action'
 
@@ -17,13 +17,7 @@ const dispatch=useDispatch()
 
 const newDrinks=drinks.find(item=>item.name===name)
 const [fullAmount, setFullAmount]=useState(newDrinks.images)
-const feature={
-position:'absolute',
-top:'40%',
-right:'0',
-color:'green',
-backgroundColor:'white'
-}
+
 
 
 
@@ -41,7 +35,7 @@ const fyp= fullAmount.map(item=>{
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
 
-   <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+   < ShoppingCartIcon onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
 function handleCart(item, itemFullName){

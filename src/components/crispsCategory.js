@@ -2,7 +2,7 @@ import React from 'react'
 import crisps from './crispy-data'
 import {useParams, Link} from 'react-router-dom';
 import {ADDTOCART} from './cart-action';
-import {AddShoppingCart}  from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useDispatch } from 'react-redux'
 
 export default function CrispsCategory(){
@@ -37,7 +37,7 @@ const crispstype=newCrisps.images.map(item=>{
 </Link>
    {item.amount<1 && <p className='top-right'>out of stock</p>}
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-   <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+   <ShoppingCartIcon style={feature} onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
 

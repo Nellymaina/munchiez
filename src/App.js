@@ -1,6 +1,10 @@
 import {React, useState, useEffect} from 'react'
 import Home from "./components/home"
 import crisps from "./components/crispy-data2"
+import Crispyhome from './components/crisps-home'
+import Cakes from './components/cakes'
+import Sweets from './components/sweets'
+import Soda from './components/soda'
 import {useDispatch} from 'react-redux'
 import { AddShoppingCart } from '@mui/icons-material'
 import {Link} from 'react-router-dom'
@@ -121,6 +125,10 @@ return(
  <Route path="/:homeId" element={<HomeCategoryPage  />}/>
  <Route path="signin" element={ <Signin/>}/>
     <Route path="signup" element={<Login/>}/>
+    <Route path='/Crisps' element={<Crispyhome/>}/>
+    <Route path='/Cakes' element={<Cakes/>}/>
+    <Route path='/Sweets' element={<Sweets/>}/>
+    <Route path='/Soda' element={<Soda/>}/>
     <Route path="/category" element={<Cat className="category-page" />}/>
     <Route path="category/cart" element={<Cartpage  />}/>
     <Route path="category/cart/checkout" element={<CheckoutPage  />}/>
