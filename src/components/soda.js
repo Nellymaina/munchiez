@@ -2,19 +2,11 @@ import React from 'react';
 import soda from './drinks-data'
 import {Link} from 'react-router-dom';
 import {ADDTOCART} from './cart-action';
-import {AddShoppingCart}  from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useDispatch } from 'react-redux'
 
 
 export default function Soda(){
-
-    const feature={
-        position:'absolute',
-        top:'40%',
-        right:'0',
-        color:'green',
-        backgroundColor:'white'
-           }
 
            const dispatch=useDispatch()
 
@@ -34,7 +26,7 @@ function handleCart(item){
         </Link>
            {item.amount<1 && <p className='top-right'>out of stock</p>}
            {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-           <AddShoppingCart style={feature} onClick={()=> handleCart(item, item.FullName)}/>
+           <ShoppingCartIcon className="shopping-cart" onClick={()=> handleCart(item, item.FullName)}/>
            </div>)
         })
 return(

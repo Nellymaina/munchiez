@@ -30,7 +30,7 @@ const {name}= useParams();
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
 
 
-   <ShoppingCartIcon onClick={()=> handleCart(item, item.FullName)}/>
+   <ShoppingCartIcon className="shopping-cart" onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
    
