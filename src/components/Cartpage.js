@@ -41,7 +41,7 @@ const sum=checksum()
    return(
     
 
-< div className="cartItems">
+< div className="">
 <button className="remove" onClick={()=>handleCartRemove(item)}>-</button>
 <img src={item.image} alt="" className="cartItems" />
 <button className="add" onClick={()=>handleCart(item)}>+</button>

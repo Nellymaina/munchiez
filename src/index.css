@@ -359,12 +359,15 @@ height:40vh;
 
 .grid-div{
   display:grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(4,1fr);
   grid-column-gap:1px;  
-width:100%;
+width:80%;
+margin-left:10%;
+margin-right:10%
 }
 .grid-div img{
   height:60%;
+  width:100%;
 }
 .link{
   margin-bottom:15vh;
@@ -504,7 +507,6 @@ font-size:15px;
   border-radius:20px
 }
 .cart-page{
-  background-color: white;
   height:100vh;
 }
 .description-image{
@@ -565,11 +567,11 @@ font-size:15px;
 font-size:15px;
 font-weight:500;
 margin-bottom:2%;
-color:black;
+color:var(--text-color);
 }
 
 h4,h3{
-  color:black;
+  color:var(--text-color);
   font-size:15px;
   display:flex;
 }
@@ -583,7 +585,7 @@ h9{
 
 }
 .span-flex{
-  color:#fa9fdf;
+  color:#d62ea4;
   font-size:14px;
   font-weight: 400;
 }
@@ -598,7 +600,7 @@ h9{
   color:var(--text-color);
 }
 .span-flex3{
-  color:#fa9fdf;
+  color:var(--text-color);
   font-size:14px;
 }
 h5{
@@ -617,7 +619,7 @@ padding-right: 10vw;
 padding-left:0;
 }
 .des-price{
-  color:orangered;
+  color:var(--text-color);
 }
 
 .checkout-page{
@@ -663,8 +665,12 @@ padding-left:0;
   font-size:35px;
 }
 .description-header{
-  color:red;
+  color:rgb(243, 84, 195);
+  display:flex;
+  justify-content:center;
+
   text-decoration:underline;
+
 }
 .text-box{
   background: transparent;

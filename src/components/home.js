@@ -28,7 +28,7 @@ function handleCart(item){
 
 
 const newProducts=images.images1.map(item=>{
-return (<div className="cardborder"> <Link to={`/${item.FullName}`}><img src={item.image} className="cardborder-img" alt="" /> <p className="homeimages-title">{item.FullName}</p> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2> </Link> <AddIcon className="add-icon" onClick={()=>handleCart(item)}/></div>)
+return (<div className="cardborder"> <Link to={`/${item.FullName}`}><img src={item.image} className="cardborder-img" alt="" /> <h2 className="price-title"><span className="price">KSH</span> {item.price}.00</h2>   <p className="homeimages-title">{item.FullName}</p> </Link> <AddIcon className="add-icon" onClick={()=>handleCart(item)}/></div>)
 })
 
 const newProducts1=images.images2.map(item=>{
@@ -62,7 +62,7 @@ return (
 
 
     <Link to='/Sweets'>
-    <div class="item"><br/><LuCandy className='item-icon'/>
+    <div class="item"><LuCandy className='item-icon'/><br/>
     Sweets</div>
     </Link>
 
