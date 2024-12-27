@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/munchiez/static/css/main.fc7a6eae.css",
-    "main.js": "/munchiez/static/js/main.f1f7e959.js",
+    "main.css": "/munchiez/static/css/main.684ee5ec.css",
+    "main.js": "/munchiez/static/js/main.7cf085c2.js",
     "static/media/png": "/munchiez/static/media/2024061015210754.525bb12205f56e95be9b.png",
     "static/media/jpg": "/munchiez/static/media/2024041802373774.49c7feac21985f30e552.jpg",
     "static/media/Screenshot2023-10-06at12.04.01_720x.png": "/munchiez/static/media/Screenshot2023-10-06at12.04.01_720x.5141df3a0230c02adaf8.png",
@@ -96,11 +96,11 @@
     "static/media/images (11).png": "/munchiez/static/media/images (11).e55c05f0519c64746962.png",
     "static/media/revicons.woff": "/munchiez/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/munchiez/index.html",
-    "main.fc7a6eae.css.map": "/munchiez/static/css/main.fc7a6eae.css.map",
-    "main.f1f7e959.js.map": "/munchiez/static/js/main.f1f7e959.js.map"
+    "main.684ee5ec.css.map": "/munchiez/static/css/main.684ee5ec.css.map",
+    "main.7cf085c2.js.map": "/munchiez/static/js/main.7cf085c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc7a6eae.css",
-    "static/js/main.f1f7e959.js"
+    "static/css/main.684ee5ec.css",
+    "static/js/main.7cf085c2.js"
   ]
 }
