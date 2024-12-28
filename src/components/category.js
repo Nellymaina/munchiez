@@ -79,24 +79,24 @@ const crunchydata=crunchy.map((item)=>
 
     return(
             <div className="Category-page">
-            <h3 className='category-name'>Shop by Brands</h3>
+            <h2 className="hero-title">Shop by Brands</h2>
             <Carousel responsive={responsive} containerClass= "brands-container" draggable={true}  swipeable={true} autoPlay={true} infinite={true} autoPlaySpeed={1500}>
         {newBrands}
         </Carousel>
-        <h3 className='category-name'>Drinks</h3>
+        <h2 className='hero-title'>Drinks</h2>
         <Carousel responsive={responsive2} containerClass= "brands-container" draggable={true}  swipeable={true} >
         {drinksdata}
         </Carousel>
 
-        <h3 className='category-name'>Crispy snacks</h3>
+        <h2 className='hero-title'>Crispy snacks</h2>
         <Carousel responsive={responsive2} containerClass= "brands-container" draggable={true}  swipeable={true} >
         {crispydata}
         </Carousel>
-        <h3 className='category-name'>Sweet-tooth Snacks</h3>
+        <h2 className='hero-title'>Sweet-tooth Snacks</h2>
         <Carousel responsive={responsive2} containerClass= "brands-container" draggable={true}  swipeable={true} >
         {sweetsourdata}
         </Carousel>
-        <h3 className='category-name'>Crunchy snacks and pasteries</h3>
+        <h2 className='hero-title'>Crunchy snacks and pasteries</h2>
 <Carousel responsive={responsive2} containerClass= "brands-container" draggable={true}  swipeable={true} >
 {crunchydata}
 </Carousel>

@@ -22,6 +22,7 @@ import Cartpage from './components/Cartpage'
 import {BrowserRouter} from 'react-router-dom'
 import Navbar from "./components/nav"
 import Login from "./components/login"
+import Footer from './components/footer'
 import Signin from './components/sign-in'
 import Search from './components/search'
 import SweetSourPage from './components/sweet-sourCategory'
@@ -117,7 +118,7 @@ return(
   
 <Search searchQuery={query} search={handleQuery} filteredSuggestions={filteredSuggestions} handleSuggestionClick={handleSuggestionClick}/>
 </div>
-  
+
   <Routes>
    
    <Route path='/search' element={query==="" ?<></>: <div className="grid-div">{crispies}</div> }/>
@@ -144,6 +145,7 @@ return(
     <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage  />}/>
  <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>    
 </Routes>
+<Footer />
 </BrowserRouter>
   )
 }

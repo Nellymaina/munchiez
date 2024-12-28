@@ -36,23 +36,32 @@ const sum=checksum()
 
 
         <div className='cart-page'>
-<p className="cart-sum">GrandTotal:KSH {sum}.00</p>
+
             {prod.map(item=>{
    return(
     
 
-< div className="">
+< div className="cart-div">
+<h2 className='hero-title'>What's in Your Cart</h2>
+<div className='cart-image'>
 <button className="remove" onClick={()=>handleCartRemove(item)}>-</button>
 <img src={item.image} alt="" className="cartItems" />
 <button className="add" onClick={()=>handleCart(item)}>+</button>
-<p className="cart-name">{item.FullName} <span className="cart-text">[{item.quantity}]</span> </p>
-<p className="check-span">KSH {item.price*item.quantity}.00</p>
+</div>
+<div className='cart-des'>
+    <ul className='cart-ul'>Item<li className="cart-name">{item.FullName}</li></ul>
+<ul className='cart-ul'>Quantity<li className="cart-text">{item.quantity}</li> </ul>
+<ul className='cart-ul'>Total<li className="check-span">KSH {item.price*item.quantity}.00</li></ul>
+</div>
 </div>
    )})}
-   <button className="clear-cart" onClick={()=>handleDeleteAll(prod)}>clear cart</button>
+
+   <div className="cart-sum">SUBTOTAL KSH {sum}.00</div>
+   <div className='checkout-div'>
         <Link to={'/category/cart/checkout'}>
             <button className="checkout" >Checkout</button>
         </Link>
+</div>
         </div>
     )
 }

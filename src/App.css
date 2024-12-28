@@ -210,10 +210,8 @@ margin-right:5%;
   .drinks-images{
     height:40vh;
   }
-  .cartItems{
-    height:auto;
-    width:10%;
-  }
+  
+  
   .search{
   width:50vw;
   }
@@ -232,7 +230,9 @@ margin-right:5%;
   .sidebar{
     width:100vw;
   }
-  
+.suggestions-list {
+  width:100vw;
+}
   
 }
 @media(max-width:500px){
@@ -260,6 +260,7 @@ margin-right:5%;
   }
 .cardborder{
   width:100%;
+position:relative;
 
 }
 .cardborder-img{
@@ -421,6 +422,7 @@ height:auto;
     }
     .sidebar{
       width:50%;
+      min-height:150%;
     }
     
     .cart-button{
@@ -438,7 +440,8 @@ height:auto;
           
         }
         .link{
-          font-size: 15px;
+          font-size: 18px;
+          padding:0%;
         }
         .link-active{
           font-size: 20px;
@@ -454,6 +457,9 @@ height:auto;
       width:90%;
     margin-left:5%;
     margin-right:5%;
+  }
+  .sidebar{
+    width:100%;
   }
 
   }

@@ -73,9 +73,8 @@ return (
   </div>
 
    <div className="carousel-Hero"  >
-   <Carousel responsive={responsive2} autoPlay={true} infinite={true} showDots={false} removeArrowOnDeviceType={["mobile", "desktop"]} containerClass="carousel-hero" autoPlaySpeed={4000}>
+   <Carousel responsive={responsive2} autoPlay={true} infinite={true} showDots={false} removeArrowOnDeviceType={["mobile", "desktop", "tablet", "superLargeDesktop"]} containerClass="carousel-hero" autoPlaySpeed={4000}>
 <img src={slider.sid1} alt="" />
-<img src={slider.sid2} alt=""/>
 <img src={slider.sid3} alt=""/>
 <img src={slider.sid4} alt=""/>
 <img src={slider.sid5} alt=""/>

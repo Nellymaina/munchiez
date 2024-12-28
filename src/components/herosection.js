@@ -1,5 +1,4 @@
 import slider1 from "./images/bg-images/slider1.jpg";
-import slider2 from "./images/bg-images/slider2.jpeg";
 import slider3 from "./images/bg-images/slider3.jpeg";
 import slider4 from "./images/bg-images/slider4.jpeg";
 import slider5 from "./images/bg-images/slider5.jpeg";
@@ -9,7 +8,6 @@ import slider6 from "./images/bg-images/slider6.jpeg";
 
 const slider={
     sid1:slider1,
-    sid2:slider2,
     sid3:slider3,
     sid4:slider4,
     sid5:slider5,
