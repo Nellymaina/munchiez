@@ -246,7 +246,13 @@ margin-left: 10%;
 margin-right: 10%;
 text-align:center;
 }
-.Intro>h2{
+.Intro img{
+  width:48%;
+  height:40vw;
+  margin-left:1%;
+  
+}
+.Intro>h2, .outro>h2{
   font-size:20px;
 
 
@@ -496,7 +502,11 @@ height:auto;
     margin-right: 10%;
     text-align:center;
     }
-    .Intro>h2{
+    .Intro img{
+      height:35vw;
+      
+    }
+    .Intro>h2, .outro>h2{
       font-size:25px;
     
     
@@ -506,8 +516,6 @@ height:auto;
     }
     .Intro>p{
     
-      color:blue;
-      font-family:'Flapdoodle', sans-serif;
       font-size: 18px;
     }
   }

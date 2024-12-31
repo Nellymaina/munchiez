@@ -70,10 +70,14 @@ color: red;
 height:100%;
 display:flex;
 justify-content:center;
+animation: pointDown 1s infinite;
 }
 .arrow-forward{
-margin-left:80%;
-color:green;
+color:red;
+margin-top:5%;
+display:flex;
+justify-content:center;
+animation: pointForward 1s infinite;
 }
 .nav{
   color:var(--nav-color);
@@ -408,7 +412,7 @@ margin-right:10%
   
 }
 .Intro{
-  background-color: black;
+  background-color:aqua;
 width:60%;
 padding-top:1%;
 padding-bottom:1%;
@@ -416,39 +420,40 @@ margin-left: 20%;
 margin-right: 20%;
 }
 .Intro>h2{
-  color:blue;
+  color:rgb(238, 116, 201);
   display:flex;
   justify-content:center;
+  text-align:center;
   font-family:'flapdoodle', sans-serif;
   font-size:40px;
 
 }
-.Intro>h3{
-display:flex;
-justify-content:center;
-color:white;
-font-family:'Flapdoodle', sans-serif;
-font-size: 35px;
+.Intro img{
+  width:48%;
+  height:25vw;
+  margin-left:1%;
+  
 }
+
 .Intro>p{
 display:flex;
 justify-content:center;
-color:aqua;
+color:rgb(238, 116, 201);
 font-family:'Flapdoodle', sans-serif;
 font-size: 30px;
 }
 .outro{
 background-color:aqua;
-width:60%;
+display:flex;
+  color:rgb(238, 116, 201);
+  justify-content:center;
+width:80%;
 padding-top:1%;
 padding-bottom:1%;
-margin-left: 30%;
+margin-left: 10%;
 }
 .outro>h2{
-  
-  display:flex;
-  
-  justify-content:center;
+  color:rgb(238, 116, 201);
   font-family:'flapdoodle', sans-serif;
   font-size:40px;
 
@@ -935,4 +940,28 @@ color:blue;
   text-indent: 0%;
   color:red;
   padding:2%;
+}
+
+@keyframes pointDown{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes pointForward{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(10px);
+  }
+  100%{
+    transform: translateX(0);
+  }
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import images from './products'
+import intro1 from './images/intro1.jpg'
+import intro2 from './images/intro2.jpg'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import responsive from "./responsive"
@@ -50,7 +52,8 @@ return (
     <div> 
       <div className='Intro'>
       <h2>Get all your favorite snacks in one go</h2>
-      <h3> We've got them at affordable prices</h3>  
+      <img src={intro1} alt=''/>
+      <img src={intro2} alt=''/>  
       <p>Feel free to...</p>
       </div>
       <div className='arrow-down'>
@@ -119,11 +122,12 @@ return (
       </Carousel>
 
       </div>
+      <Link to='/category'>
       <div className='outro'>
         <h2>View more Products</h2>
-        
-        </div>
         <ArrowForwardIcon className='arrow-forward' />
+</div>
+</Link>
 </div>
   
   )}
