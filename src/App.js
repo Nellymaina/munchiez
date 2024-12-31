@@ -33,6 +33,7 @@ import CheckoutPage from './components/checkout'
 import OverallCategoryPage from './components/overallCategoryPage'
 import './index.css';
 import './App.css';
+import ScrollToTop from './components/Scroll-to-top'
 
 export default function App(){
   const [query, setQuery]=useState("");
@@ -111,8 +112,8 @@ return(
   }, [theme]);
 
 return(
-  <BrowserRouter className="over" basename='/munchiez'>
-    
+  <BrowserRouter  basename='/munchiez'>
+    <ScrollToTop />
   <div className="navbar" > 
   <Navbar mode={toggleTheme} theme={theme}/>
   

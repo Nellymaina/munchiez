@@ -1,4 +1,5 @@
 import React from 'react'
+import {Outlet} from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
@@ -6,6 +7,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
  export default function Footer(){
     return(
+        
         <div className="footer-page">
             <div className='footer-div'>
                 <h2 className='link-title'>Quick links</h2>
@@ -34,6 +36,8 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
                 <WhatsAppIcon className='social-icons'/>
                 </div>
 <p className='footer-copyright'>© 2024 Munchiez. All rights reserved.</p>
+<Outlet/>
         </div>
+        
     )
  }

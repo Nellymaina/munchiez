@@ -15,7 +15,8 @@ import { GiChipsBag } from "react-icons/gi";
 import { RiCake3Line } from "react-icons/ri";
 import { LuCandy } from "react-icons/lu";
 import { GiSodaCan } from "react-icons/gi";
-
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 export default function Home() {
   
@@ -46,7 +47,14 @@ return (<div className="cardborder"> <Link to={`/${item.FullName}`}> <img src={i
 
 
 return (
-    <div>       
+    <div> 
+      <div className='Intro'>
+      <h2>Get all your favorite snacks in one go</h2>
+      <h3> We've got them at affordable prices</h3>  
+      <p>Feel free to...</p>
+      </div>
+      <div className='arrow-down'>
+<ArrowDownwardIcon /></div>
       <h2 className="hero-title">Take Your Pick</h2>
 
       <div className='grid-box-container'>
@@ -111,6 +119,11 @@ return (
       </Carousel>
 
       </div>
+      <div className='outro'>
+        <h2>View more Products</h2>
+        
+        </div>
+        <ArrowForwardIcon className='arrow-forward' />
 </div>
   
   )}

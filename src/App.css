@@ -231,7 +231,34 @@ margin-right:5%;
     width:100vw;
   }
 .suggestions-list {
-  width:100vw;
+  width:100%;
+}
+.checkout{
+  width:80vw;
+  padding:2%;
+
+}
+.Intro{ 
+width:80%;
+padding-top:1%;
+padding-bottom:1%;
+margin-left: 10%;
+margin-right: 10%;
+text-align:center;
+}
+.Intro>h2{
+  font-size:20px;
+
+
+}
+.Intro>h3{
+  font-size: 18px;
+}
+.Intro>p{
+
+  color:blue;
+  font-family:'Flapdoodle', sans-serif;
+  font-size: 15px;
 }
   
 }
@@ -461,7 +488,28 @@ height:auto;
   .sidebar{
     width:100%;
   }
-
+  .Intro{ 
+    width:80%;
+    padding-top:1%;
+    padding-bottom:1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align:center;
+    }
+    .Intro>h2{
+      font-size:25px;
+    
+    
+    }
+    .Intro>h3{
+      font-size: 20px;
+    }
+    .Intro>p{
+    
+      color:blue;
+      font-family:'Flapdoodle', sans-serif;
+      font-size: 18px;
+    }
   }
 
   @media (min-width:800px) and (max-width:1090px){

@@ -36,21 +36,22 @@ const sum=checksum()
 
 
         <div className='cart-page'>
+            <h2 className='hero-title'>What's in Your Cart</h2>
 
             {prod.map(item=>{
    return(
     
 
 < div className="cart-div">
-<h2 className='hero-title'>What's in Your Cart</h2>
+
 <div className='cart-image'>
-<button className="remove" onClick={()=>handleCartRemove(item)}>-</button>
 <img src={item.image} alt="" className="cartItems" />
-<button className="add" onClick={()=>handleCart(item)}>+</button>
+<p className="cart-name">{item.FullName}</p>
 </div>
 <div className='cart-des'>
-    <ul className='cart-ul'>Item<li className="cart-name">{item.FullName}</li></ul>
-<ul className='cart-ul'>Quantity<li className="cart-text">{item.quantity}</li> </ul>
+
+<ul className='cart-ul'>price<li className="check-span">KSH {item.price}.00</li></ul>
+    <button className="remove" onClick={()=>handleCartRemove(item)}>-</button><p className="cart-text">{item.quantity}</p><button className="add" onClick={()=>handleCart(item)}>+</button>
 <ul className='cart-ul'>Total<li className="check-span">KSH {item.price*item.quantity}.00</li></ul>
 </div>
 </div>
