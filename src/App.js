@@ -34,6 +34,7 @@ import OverallCategoryPage from './components/overallCategoryPage'
 import './index.css';
 import './App.css';
 import ScrollToTop from './components/Scroll-to-top'
+import Mpesa from './components/payment'
 
 export default function App(){
   const [query, setQuery]=useState("");
@@ -145,6 +146,7 @@ return(
     <Route path="category5/:crunchyname"    element={<CrunchyPage />}/>
     <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage  />}/>
  <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>    
+ <Route path ='payment' element={<Mpesa/>}/>
 </Routes>
 <Footer />
 </BrowserRouter>

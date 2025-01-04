@@ -23,7 +23,7 @@ return(
       <li><NavLink className={({isActive})=>(isActive? "link-active": "link")} onClick={toggle} to="/">Home</NavLink></li>
       <li><NavLink className={({isActive})=>(isActive? "link-active": "link")} onClick={toggle} to="/category">Category</NavLink></li>
       <li><NavLink className={({isActive})=>(isActive? "link-active": "link")} onClick={toggle} to="/category/cart/checkout">Cart and Checkout</NavLink></li>
-     <li><NavLink className={({isActive})=>(isActive? "link-active": "link")}  onClick={toggle} to="/payment and shipping">Payment and Shipping</NavLink></li>
+     <li><NavLink className={({isActive})=>(isActive? "link-active": "link")}  onClick={toggle} to="/payment">Payment and Shipping</NavLink></li>
        <li><NavLink className={({isActive})=>(isActive? "link-active": "link")} onClick={toggle} to="/about">About</NavLink></li>
     </ul>
 
