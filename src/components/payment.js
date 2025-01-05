@@ -19,7 +19,7 @@ const amount = cartItems.reduce((total, item) => total + item.price * item.quant
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/stkpush', {
+      const response = await axios.post('https://munchiez-1.onrender.com', {
         phoneNumber,
         amount,
       });
