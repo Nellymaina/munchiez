@@ -52,7 +52,7 @@ function handleCartRemove(){
   <button className="cart-button2" onClick={handleCartRemove}>-</button>
   {pro? pro.quantity:1}
 <button className="cart-button" onClick={handleCart}>AddToCart</button>
-<p>KSH {crunchydata.price}</p>
+<p>KSH {crunchydata.price}.00</p>
 </div>
   <div>
 <h3 className="description-header">Ingredients </h3><p className="description-clause">{crunchydata.description1}</p>

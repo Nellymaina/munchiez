@@ -575,7 +575,7 @@ padding:2%;
 margin-left:2%;
 }
 
-.checkout{
+.checkout, .pay-button{
   width:auto;
   padding-left:10vw;
   padding-right: 10vw;
@@ -603,6 +603,20 @@ justify-content:center;
   width:auto;
 padding:2%;
 font-size:15px;
+
+}
+.payment-page{
+  width:100%;
+  height:100%;
+  
+}
+.payment-amount, .payment-button, .payment-number{
+display:flex;
+width:100%;
+justify-content: center;
+margin-top:1%;
+}
+.pay-button{
 
 }
 .clear-cart{

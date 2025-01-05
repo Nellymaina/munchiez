@@ -19,18 +19,15 @@ function handleCartRemove(item){
 dispatch({type:REMOVEFROMCART, payload:item})
      
      };
-     const [checktotal, setChecktotal]=useState(prod)
+     
+const totalPrice = prod.reduce((total, item) => total + item.price * item.quantity, 0);
 
-    function checksum(){
-    return checktotal.reduce((total, item)=>{
-    return total+item.price*item.quantity}, 0)
-    }
-const sum=checksum()
-
-     function handleDeleteAll(item){
+function handleDeleteAll(item){
         dispatch({type:DELETEALL, payload:item})
              
-             }
+}
+
+
  const cart=prod.map(item=>{
             return(
    
@@ -50,18 +47,17 @@ const sum=checksum()
 
     return(
 
-
         <div className='cart-page'>
-            <h2 className='hero-title'>What's in Your Cart?</h2>
+{totalPrice<1? <p className="hero-title">Oops! Nothing to see here</p> : <> <h2 className='hero-title'>What's in Your Cart?</h2>
 
            {cart}
 
-   <div className="cart-sum">SUBTOTAL KSH {sum}.00</div>
+   <div className="cart-sum">SUBTOTAL KSH {totalPrice}.00</div>
    <div className='checkout-div'>
-        <Link to={'/category/cart/checkout'}>
+        <Link to={'/payment'}>
             <button className="checkout" >Checkout</button>
         </Link>
-</div>
+</div></>}
         </div>
     )
 }

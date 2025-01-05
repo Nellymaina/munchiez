@@ -6,18 +6,12 @@ const STKPush = () => {
 
 
 const cartItems=useSelector(state=>state.items)
-    const [checktotal, setChecktotal]=useState(cartItems)
-
-    function checksum(){
-    return checktotal.reduce((total, item)=>{
-    return total+item.price*item.quantity}, 0)
-    }
-const sum=checksum()
+const amount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);  
 
 
 
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [amount, setAmount] = useState('sum');
+  
   const [message, setMessage] = useState('');
 
   const handlePayment = async (e) => {
@@ -29,7 +23,7 @@ const sum=checksum()
         phoneNumber,
         amount,
       });
-      setMessage('Payment prompt sent to your phone.');
+      setMessage('Payment prompt initiated.');
     } catch (error) {
       console.error('Error initiating STK Push:', error);
       setMessage('Failed to send payment prompt. Please try again.');
@@ -37,10 +31,13 @@ const sum=checksum()
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
-      <h2>M-Pesa Payment</h2>
+    <div className="payment-page">
+      <h2 className="hero-title">M-Pesa Payment</h2>
+      <div className="payment-amount">
+         Total amount: {amount}
+        </div>
       <form onSubmit={handlePayment}>
-        <div>
+        <div className='payment-number'>
           <label>Phone Number:</label>
           <input
             type="text"
@@ -50,16 +47,8 @@ const sum=checksum()
             required
           />
         </div>
-        <div>
-          <label>Amount (KES):</label>
-          <input
-            type="number"
-            value={amount}
-            placeholder="amount"
-            required
-          />
-        </div>
-        <button type="submit">Pay</button>
+       <div className="payment-button">
+        <button type="submit" className="pay-button">Pay</button></div>
       </form>
       {message && <p>{message}</p>}
     </div>

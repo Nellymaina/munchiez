@@ -23,7 +23,7 @@ function handleCart(item){
            <div className='container'>
         <Link to={`/category4/Sweets/${item.FullName}`}>
         {item.amount >=1? <img className="drinksimage" src={item.image} alt=""/> : <img className="drinksimage2" src={item.image} alt="" />}
-           <p className="item-price">KES {item.price}.00 </p>
+           <p className="item-price">KSH {item.price}.00 </p>
            <h5 className="Item-name">{item.namey}&nbsp;<span className="span-flex">{item.subname}</span>&nbsp;<span className="span-flex2">{item.subname2}</span>&nbsp;<span className='span-flex3'>{item.subname3}</span></h5>
         </Link>
            {item.amount<1 && <p className='top-right'>out of stock</p>}
