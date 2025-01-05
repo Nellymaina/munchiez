@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
+import {useSelector} from 'react-redux';
 import axios from 'axios';
 
 const STKPush = () => {
+
+
+const cartItems=useSelector(state=>state.items)
+    const [checktotal, setChecktotal]=useState(cartItems)
+
+    function checksum(){
+    return checktotal.reduce((total, item)=>{
+    return total+item.price*item.quantity}, 0)
+    }
+const sum=checksum()
+
+
+
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState('sum');
   const [message, setMessage] = useState('');
 
   const handlePayment = async (e) => {
@@ -41,8 +55,7 @@ const STKPush = () => {
           <input
             type="number"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter amount"
+            placeholder="amount"
             required
           />
         </div>
