@@ -49,7 +49,7 @@ app.post('/stkpush', async (req, res) => {
     PartyA: phoneNumber,
     PartyB: shortcode,
     PhoneNumber: phoneNumber,
-    CallBackURL: 'https://your-callback-url.com/callback',
+    CallBackURL: process.env.CALLBACK_URL,
     AccountReference: 'Test Payment',
     TransactionDesc: 'Payment description',
   };
