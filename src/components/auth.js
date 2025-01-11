@@ -10,7 +10,7 @@ export default function AuthProvider({ children }){
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/login", { username, password });
+      const response = await axios.post("https://munchiez-1.onrender.com/login", { username, password });
       const token = response.data.token; 
       setAuth(token);
       localStorage.setItem("token", token);

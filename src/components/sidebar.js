@@ -31,6 +31,7 @@ return(
    <NavLink className={({ isActive }) => (isActive ? 'link' : 'link-active')} onClick={toggle} to="/cart">Cart</NavLink>
    <NavLink className={({ isActive }) => (isActive ? 'link' : 'link-active')}  onClick={toggle} to="/payment">Checkout and Payment</NavLink>
   {auth? <div className='log-out'> <LogoutIcon/><p onClick={logout(toggle)}>Log out</p></div> :<div className='log-out'> <LogoutIcon/><Link className='link-active' onClick={toggle} to='signin' >Log in</Link></div>}
+
 <Switch checked={theme} onChange={toggleTheme} onColor="#4caf50"
       offColor="#f44336"
       checkedIcon={true} 
