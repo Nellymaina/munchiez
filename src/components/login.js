@@ -28,7 +28,7 @@ export default function Register() {
       password: user.password,
     };
 
-    axios.post('http://localhost:5000/register', payload)
+    axios.post('https://munchiez-1.onrender.com/register', payload)
       .then((response) => {
         console.log('User registered successfully:', response.data);
         alert('Account created successfully!');
