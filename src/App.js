@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import {React, useState, useEffect, useContext} from 'react'
 import Home from "./components/home"
 import crisps from "./components/crispy-data2"
 import Crispyhome from './components/crisps-home'
@@ -33,13 +33,17 @@ import CheckoutPage from './components/checkout'
 import OverallCategoryPage from './components/overallCategoryPage'
 import './index.css';
 import './App.css';
+import AuthProvider from "./components/auth";
 import ScrollToTop from './components/Scroll-to-top'
 import Mpesa from './components/payment'
+import ProtectedRoute from './components/protected-components'
+import {AuthContext} from './components/auth'
 
 export default function App(){
   const [query, setQuery]=useState("");
 
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+
 
   const suggestion = crisps.filter(item=>item.subname2 && item.FullName &&item.namey &&item.subname3 && item.subname)
   const suggestions=[...new Set(suggestion.flatMap(item=>[item.namey, item.FullName, item.subname2, item.subname3, item.subname]))]
@@ -93,21 +97,13 @@ return(
 
 
 
-  const [theme, setTheme] = useState("light"); 
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
+  
 return(
-  <BrowserRouter  basename='/munchiez'>
+  <AuthProvider>
+      <BrowserRouter  basename='/munchiez'>
     <ScrollToTop />
   <div className="navbar" > 
-  <Navbar mode={toggleTheme} theme={theme}/>
+  <Navbar />
   
 <Search searchQuery={query} search={handleQuery} filteredSuggestions={filteredSuggestions} handleSuggestionClick={handleSuggestionClick}/>
 </div>
@@ -137,9 +133,12 @@ return(
     <Route path="category5/:crunchyname"    element={<CrunchyPage />}/>
     <Route path="category5/:crunchyname/:crunchiesName"    element={<CrunchyCategoryPage  />}/>
  <Route path="category6/:overallName" element={<OverallCategoryPage  />}/>    
- <Route path ='payment' element={<Mpesa />}/>
+ <Route path ='payment' element={<ProtectedRoute><Mpesa /></ProtectedRoute>}/>
+              
+
 </Routes>
 <Footer />
 </BrowserRouter>
+</AuthProvider>
   )
 }

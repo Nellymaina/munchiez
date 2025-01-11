@@ -195,7 +195,13 @@ margin-right:5%;
   }
 
   .login-container{
-    height:15vh;
+    padding:10%;
+  }
+  .login-page{
+    display:flex;
+   align-items:center;
+   height:80vh;
+   width:100%;
   }
   .form{
     height:90vh;
@@ -327,10 +333,8 @@ width:5px;
  .sidebar{
   width:100%;
  }
- .login-container{
-  padding:15%;
-  padding-left:10%;
- }
+ 
+ 
   
  .grid-div{
   width:90%;
