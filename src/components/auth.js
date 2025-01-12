@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 
 export default function AuthProvider({ children }){
   const [auth, setAuth] = useState(null);
-  const [theme, setTheme] = useState("light"); 
+  
 
 
   const login = async (username, password) => {
@@ -26,13 +26,7 @@ export default function AuthProvider({ children }){
 
 
   
-    const toggleTheme = () => {
-      setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    };
-  
-    useEffect(() => {
-      document.documentElement.setAttribute("data-theme", theme);
-    }, [theme]);
+    
   
 
   useEffect(() => {
@@ -43,7 +37,7 @@ export default function AuthProvider({ children }){
   }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, login, logout, toggleTheme, theme}}>
+    <AuthContext.Provider value={{ auth, login, logout}}>
       {children}
     </AuthContext.Provider>
   );

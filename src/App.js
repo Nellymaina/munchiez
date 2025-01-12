@@ -120,7 +120,7 @@ return(
     <Route path='/Sweets' element={<Sweets/>}/>
     <Route path='/Soda' element={<Soda/>}/>
     <Route path="/category" element={<Cat className="category-page" />}/>
-    <Route path="category/cart" element={<Cartpage  />}/>
+    <Route path="/cart" element={<Cartpage  />}/>
     <Route path="category/cart/checkout" element={<CheckoutPage  />}/>
     <Route path="category/:name" element={ <Brands />} />
     <Route path="category/:name/:brandProductsId" element={<BrandProductsPage />} />

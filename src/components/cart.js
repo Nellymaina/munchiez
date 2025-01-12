@@ -7,7 +7,7 @@ const totalItems=useSelector(state=>state.totalItems)
 
     return(
         <div className="cart-fill">
-           <Link to ={"/category/cart"}>
+           <Link to ={"/cart"}>
             <ShoppingBagIcon style={{fill: "aqua", fontSize:"30px"}}/>
             <span className="cart-badge" >{totalItems}</span>
             </Link>

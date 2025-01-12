@@ -29,9 +29,7 @@ const crunchies=crunchydata.images.map(item=>{
 </Link>
    {item.amount<1 && <p className='top-right'>out of stock</p>}
    {item.amount>0 && item.amount <=10 && <p className='top-right'>few units left</p>} 
-
-
-   <ShoppingCartIcon onClick={()=> handleCart(item, item.FullName)}/>
+<ShoppingCartIcon className="shopping-cart" onClick={()=> handleCart(item, item.FullName)}/>
    </div>)
 })
 
