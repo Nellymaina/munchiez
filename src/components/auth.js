@@ -4,6 +4,13 @@ import axios from "axios";
 export const AuthContext = createContext();
 
 export default function AuthProvider({ children }){
+  const [sidebar, setsidebar]=useState(false);
+    
+  
+  function toggle(){
+     setsidebar(prevState=>!prevState)
+  }
+  
   const [auth, setAuth] = useState(null);
   
 
@@ -37,7 +44,7 @@ export default function AuthProvider({ children }){
   }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, login, logout}}>
+    <AuthContext.Provider value={{ sidebar, toggle, auth, login, logout}}>
       {children}
     </AuthContext.Provider>
   );

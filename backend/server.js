@@ -12,7 +12,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 app.use(express.json());
 
 const JWT_SECRET = crypto.randomBytes(64).toString('hex');

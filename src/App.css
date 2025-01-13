@@ -41,9 +41,8 @@
   
   body{
     width:100%;
-    max-width: fit-content;
-    overflow-x:hidden;
     margin-top:130px;
+   
     
 
   }
@@ -198,12 +197,7 @@ margin-right:5%;
   .login-container{
     padding:10%;
   }
-  .login-page{
-    display:flex;
-   align-items:center;
-   height:80vh;
-   width:100%;
-  }
+  
   .form{
     height:90vh;
   }
@@ -232,9 +226,7 @@ margin-right:5%;
   li{
     padding-bottom: 2vh;
   }
-  .sidebar{
-    width:100vw;
-  }
+  
 .suggestions-list {
   width:100%;
 }
@@ -273,6 +265,8 @@ text-align:center;
 @media(max-width:500px){
   body{
     margin-top:165px;
+    width:100%;
+    position:relative;
   }
   .navbar{
   padding-bottom:115px;
@@ -458,16 +452,12 @@ height:auto;
     .cart-button{
       height:fit-content;
     }
-    
-        .carousel-hero{
-          margin-top:0;
-          
-          height:0%;
+    .carousel-hero{
+     margin-top:0;
+     height:0%;
         }
-        .carousel-hero img{
-          height:100%;
-          
-          
+    .carousel-hero img{
+    height:100%;  
         }
         
 

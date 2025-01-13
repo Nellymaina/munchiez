@@ -1,60 +1,23 @@
-import {React, useState, useEffect, useRef} from 'react';
+import {React, useContext} from 'react';
 import Cart from './cart'
 import Sidebar from "./sidebar"
 import {Link} from 'react-router-dom'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import { AuthContext } from './auth';
+import {motion, AnimatePresence} from 'framer-motion';
+export default function Navbar(){
+    const { sidebar, toggle} =useContext(AuthContext)
 
-export default function Navbar({mode, theme}){
-    const [sidebar, setsidebar]=useState(false);
-    const sidebarRef=useRef(null)
 
-function toggle(){
-   setsidebar(prevState=>!prevState)
-}
 
-useEffect(()=>{
-  function handleClickOutside(event){
-if (sidebarRef.current && !sidebarRef.current.contains(event.target)){
-  setsidebar(false)
-}}
-if (sidebar){
-  document.addEventListener('click', handleClickOutside)
-}
 
-return()=>{
-  document.removeEventListener('click', handleClickOutside)
-}
-
-},[sidebar])
-
-let startX;
-let currentX;
-function handleDragStart(event){
-  startX=event.clientX;
-}
-
-function handleDrag(event){
-  currentX=event.clientX;
-}
-
-const color={
-  color:"white",
-  fontSize:'30px'
-  
-}
-
-function handleDragEnd(event){
-  const threshold=100;
-  if(startX-currentX>threshold){
-    setsidebar(false)
-  }
-}
 
     return(
     <div className='navbar-contents'>
         <button onClick={toggle} className='ham-button'>&#9776;</button>
 
-{sidebar===true && <div ref={sidebarRef}  draggable="true" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}><Sidebar /></div>} <Link to="/" className="nav">MUNCH<span className='nav2'>ie</span><span className='nav3'>Z</span></Link> 
+        <AnimatePresence>{sidebar===true && <motion.div className="menu-container" initial={{x:'-100%'}} animate={{x:0}} exit={{x:'-100%'}} transition={{duration:0.3}}><Sidebar/>  </motion.div>
+}</AnimatePresence> <Link to="/" className="nav">MUNCH<span className='nav2'>ie</span><span className='nav3'>Z</span></Link> 
    
    <div className="cart-icon">
       

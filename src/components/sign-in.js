@@ -6,6 +6,7 @@ export default function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] =useState(false)
 
   const { auth, login, logout } = useContext(AuthContext);
 
@@ -27,14 +28,21 @@ export default function Signin() {
       setMessage("Login failed. Please check your credentials.");
     }
   }
+async function handleClick(){
+setLoading(true)
+try{
+await handleSubmit()
+}
+finally{
+setLoading(false)}
+}
 
   return (
     <div className="login-page">
 
        {auth ? 
-        <div>
+        <div className='logout-page'>
           <p>Welcome! You are logged in.</p>
-          <button onClick={logout} className='submit-login'>Logout</button>
         </div>
       : 
 <div className='login-div'>
@@ -57,7 +65,7 @@ export default function Signin() {
           />
           <br />
           {message && <p >{message}</p>} 
-          <button type="submit" className='submit-login'>Submit</button>
+          <button type="submit" className='submit-login' onClick={handleClick} disabled={loading} style={{cursor:loading?"not-allowed":"pointer", opacity:loading? 0.5: 1, transition:"opacity 0.3s ease"}}>Submit</button>
           
         </form> 
       </div>
