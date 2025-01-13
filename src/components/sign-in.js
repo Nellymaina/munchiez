@@ -18,12 +18,10 @@ export default function Signin() {
     setPassword(event.target.value);
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setMessage(""); 
+  async function handleSubmit() {
     try {
       await login(username, password);
-      setMessage("Login successful! Welcome back.");
+      
     } catch (error) {
       setMessage("Login failed. Please check your credentials.");
     }
