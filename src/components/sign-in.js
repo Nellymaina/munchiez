@@ -8,7 +8,7 @@ export default function Signin() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] =useState(false)
 
-  const { auth, login, logout } = useContext(AuthContext);
+  const { auth, login } = useContext(AuthContext);
 
   function handleUsername(event) {
     setUsername(event.target.value);

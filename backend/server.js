@@ -12,7 +12,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'https://nellymaina.github.io/munchiez' }));
+app.use(cors({ origin: 'https://nellymaina.github.io/munchiez', credentials: true, } ));
 app.use(express.json());
 
 const JWT_SECRET = crypto.randomBytes(64).toString('hex');
@@ -86,7 +86,10 @@ app.post("/login", async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.status(200).json({ token });
+    res.status(200).json({ token , 
+      httpOnly: true,
+      secure: true, 
+      sameSite: 'Strict'});
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ error: "Error logging in!" });
