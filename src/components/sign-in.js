@@ -21,9 +21,9 @@ export default function Signin() {
   async function handleSubmit() {
     try {
       await login(username, password);
-      
+      setMessage('Login successful!');
     } catch (error) {
-      setMessage("Login failed. Please check your credentials.");
+      setMessage(error.message || 'Login failed. Please check your credentials.');
     }
   }
 async function handleClick(){
