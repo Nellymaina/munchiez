@@ -7,7 +7,7 @@ Munchiez is an **e-commerce web application** that allows users to browse, add, 
 - 🔍 **Product Listings** – View a variety of Kenyan snacks with images & details  
 - ⭐ **Modern UI** – Built with **MUI (Material UI)** for a sleek experience  
 - 💳 **Checkout System** – Safaricom-daraja API integration
-- 🌙 **Dark Mode Support** – (if implemented)  
+- 🌙 **Dark Mode Support**  
 
 ## 🛠 Tech Stack
 ### **Frontend**
