@@ -12,7 +12,7 @@ Munchiez is an **e-commerce web application** that allows users to browse, add, 
 ## 🛠 Tech Stack
 ### **Frontend**
 - React.js  
-- Tailwind CSS  
+- CSS  
 - Material UI (MUI) for icons & UI components  
 - Redux for state management  
 - Axios for API requests (if fetching data from backend)  
